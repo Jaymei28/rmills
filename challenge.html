@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual Event | Rasheda Mills Credit Masterclass</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-dark: #0a0a0a;
+            --text-primary: #0a0a0a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #8a8a8a;
+            --text-light: #ffffff;
+            --accent-gold: #c5a059;
+            --accent-gold-light: #e0c58e;
+            --border: rgba(0, 0, 0, 0.08);
+            --container-width: 1200px;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 60px 0;
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+            width: 100%;
+        }
+
+        /* Branding: Top Info Bar */
+        .info-bar {
+            background-color: var(--bg-dark);
+            color: var(--accent-gold);
+            padding: 12px 0;
+            text-align: center;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border-bottom: 1px solid var(--accent-gold);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1002;
+        }
+
+        /* Navbar */
+        .navbar {
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            position: fixed;
+            top: 45px;
+            /* Account for info-bar */
+            left: 0;
+            width: 100%;
+            z-index: 1001;
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            text-decoration: none;
+            color: var(--text-primary);
+        }
+
+        /* Hero */
+        .hero-section {
+            padding-top: 140px;
+            /* Offset for navbar and info-bar */
+            background: radial-gradient(circle at top right, #fdfbf7 0%, #ffffff 100%);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            height: 100%;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2rem, 4vw, 3.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+            color: var(--bg-dark);
+        }
+
+        .hero-badge {
+            display: inline-block;
+            margin-bottom: 1rem;
+            padding: 0.4rem 0.8rem;
+            background: rgba(197, 160, 89, 0.1);
+            color: var(--accent-gold);
+            border: 1px solid var(--accent-gold);
+            border-radius: 4px;
+            font-weight: 700;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 1.1rem 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1rem;
+            transition: var(--transition);
+            text-align: center;
+            border: 2px solid var(--bg-dark);
+            cursor: pointer;
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);
+            background: var(--accent-gold);
+            border-color: var(--accent-gold);
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            max-height: 70vh;
+            /* Contain the image height */
+        }
+
+        .hero-img {
+            max-height: 100%;
+            width: auto;
+            border-radius: 12px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+            object-fit: contain;
+        }
+
+        /* What you will learn */
+        .learn-section {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.8rem;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            color: var(--text-light);
+        }
+
+        .learn-subtitle {
+            font-size: 1.2rem;
+            color: var(--accent-gold);
+            font-family: var(--font-heading);
+            font-weight: 600;
+            margin-bottom: 3rem;
+        }
+
+        .learn-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .learn-card {
+            background: rgba(255, 255, 255, 0.03);
+            padding: 1.5rem 2rem;
+            border-radius: 4px;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            transition: var(--transition);
+        }
+
+        .learn-card .check {
+            color: var(--accent-gold);
+            font-weight: 900;
+            font-size: 1.2rem;
+        }
+
+        /* Scarcity */
+        .seats-block {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            text-align: center;
+        }
+
+        .seats-label {
+            font-family: var(--font-heading);
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 10px;
+            background: #eee;
+            border-radius: 100px;
+            overflow: hidden;
+        }
+
+        .progress-bar-fill {
+            width: 87%;
+            height: 100%;
+            background: var(--accent-gold);
+            border-radius: 100px;
+        }
+
+        .urgency-text {
+            margin-top: 1rem;
+            font-weight: 800;
+            color: #b00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.4rem;
+        }
+
+        /* Modal / Popup */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.85);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: none;
+            /* Hidden by default */
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            background: #fff;
+            max-width: 800px;
+            width: 100%;
+            border-radius: 12px;
+            padding: 3rem;
+            position: relative;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: var(--bg-dark);
+            cursor: pointer;
+            line-height: 1;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: var(--accent-gold);
+        }
+
+        /* Bio */
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .bio-image-wrapper {
+            position: relative;
+            max-height: 60vh;
+        }
+
+        .bio-img {
+            width: 100%;
+            max-height: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+            aspect-ratio: 4/5;
+        }
+
+        .bio-title {
+            font-family: var(--font-heading);
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .bio-text {
+            color: var(--text-secondary);
+            font-size: 1.1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        /* Footer - Not necessarily 100vh */
+        .footer {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 80px 0;
+            border-top: 5px solid var(--accent-gold);
+            min-height: auto;
+            display: block;
+        }
+
+        /* Fix for scroll lock when modal is open */
+        body.modal-open {
+            overflow: hidden;
+        }
+
+        @media (max-width: 1024px) {
+
+            .hero-grid,
+            .bio-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .hero-image-wrapper {
+                justify-content: center;
+                max-height: 40vh;
+            }
+
+            .learn-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .bio-image-wrapper {
+                order: 2;
+            }
+
+            .modal-content {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="info-bar">
+        🏆 Virtual Event | March 12th, 2026 | 6PM CST
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">RM</a>
+            <div style="display: flex; gap: 2rem; align-items: center;">
+                <a href="index.html#ecosystem"
+                    style="text-decoration:none; color:var(--text-primary); font-weight:500; font-size:0.9rem;">Ecosystem</a>
+                <button onclick="openModal()" class="btn" style="padding:0.7rem 1.5rem; font-size:0.85rem;">Join the
+                    Event</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <div class="hero-badge">Special Presentation</div>
+                    <h1>LEARN THE EXACT BLUEPRINT TO GET $100K IN FUNDING & SCALE TO 7 FIGURES.</h1>
+                    <p style="font-size:1.1rem; color:var(--text-secondary); margin-bottom:2rem; max-width:500px;">
+                        Join Rasheda Mills as she reveals high-level strategies for building a credit-based legacy.
+                    </p>
+                    <button onclick="openModal()" class="btn btn-gold">Reserve Your Seat Now</button>
+                </div>
+                <div class="hero-image-wrapper">
+                    <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c22feb3e56b90f82a8e741.jpg"
+                        alt="Rasheda Mills" class="hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Objectives -->
+    <section class="learn-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What You Will Learn</h2>
+                <p class="learn-subtitle">The inside secrets people match are using to repair & build their credit and
+                    grow their income.</p>
+            </div>
+
+            <div class="learn-grid">
+                <div class="learn-card"><span class="check">✓</span> Advanced Consumer Law Methods</div>
+                <div class="learn-card"><span class="check">✓</span> AI - ChatGPT Dispute Secret</div>
+                <div class="learn-card"><span class="check">✓</span> High-Performance Lead Conversion</div>
+                <div class="learn-card"><span class="check">✓</span> The $100k+ Business Funding Blueprint</div>
+                <div class="learn-card"><span class="check">✓</span> Credit Funnel Mastery Systems</div>
+                <div class="learn-card"><span class="check">✓</span> CEO Multiple Revenue Streams</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scarcity -->
+    <section>
+        <div class="container">
+            <div style="text-align: center;">
+                <button onclick="openModal()" class="btn btn-gold" style="padding:1.5rem 4rem; font-size:1.15rem;">Get
+                    Your Virtual Ticket</button>
+
+                <div class="seats-block">
+                    <div class="seats-label">Only 23 Admission Seats Left</div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill"></div>
+                    </div>
+                    <div class="urgency-text">
+                        <span>🚨</span> Final Registration Closing Soon!
+                    </div>
+                </div>
+
+                <div
+                    style="margin-top: 3rem; font-size: 0.85rem; font-weight: 700; opacity: 0.5; letter-spacing: 1.5px; text-transform: uppercase;">
+                    Trusted by 1,300+ students worldwide <span class="stars">★★★★★</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- New Meet Section (Styled after index.html Bio) -->
+    <section class="bio-section">
+        <div class="container">
+            <div class="bio-grid">
+                <div class="bio-image-wrapper">
+                    <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c22feb427f6e625863ab88.jpg"
+                        alt="Rasheda Mills" class="bio-img">
+                </div>
+                <div>
+                    <h2 class="bio-title">Meet Rasheda Mills</h2>
+                    <div class="bio-text">
+                        <p>I started out running my credit repair business years ago and quickly scaled it to 6 figures
+                            in less than a year. Throughout my journey, I learned the importance of systems,
+                            automations, and strategy.</p>
+                        <p>Now, I help entrepreneurs like you build legacies. I've scaled past 7 figures and I'm ready
+                            to help you become the next plaque winner.</p>
+                    </div>
+                    <button onclick="openModal()" class="btn" style="margin-top:2.5rem;">Join the Mentorship</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal / Pre-Qualification Quiz Popup -->
+    <div id="quizModal" class="modal-overlay" onclick="closeModal(event)">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <h3
+                style="font-family:var(--font-heading); font-size:1.8rem; font-weight:800; margin-bottom:0.5rem; text-align:center;">
+                Pre-Qualification Quiz</h3>
+            <p style="text-align:center; color:var(--text-secondary); margin-bottom:2rem; font-size:0.95rem;">Please
+                help us prepare your experience by answering a few short questions.</p>
+            <div style="width:100%; text-align:center;">
+                <iframe src="https://api.leadconnectorhq.com/widget/survey/kBn3xPZ4NhVa2kYjwdBq"
+                    style="border:none; width:100%; min-height:500px;" scrolling="no" id="kBn3xPZ4NhVa2kYjwdBq"
+                    title="survey"></iframe>
+                <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div
+                style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;">
+                <div>
+                    <div class="footer-logo">Rasheda Mills</div>
+                    <p style="color:rgba(255,255,255,0.6); font-size:0.9rem;">Credit Architect | Fintech Founder |
+                        Speaker</p>
+                </div>
+                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 1rem;">
+                    <div style="display: flex; gap: 2rem;">
+                        <a href="#"
+                            style="color:var(--accent-gold); text-decoration:none; font-weight:600; font-size:0.9rem;">Privacy
+                            Policy</a>
+                        <a href="#"
+                            style="color:var(--accent-gold); text-decoration:none; font-weight:600; font-size:0.9rem;">Terms
+                            & Conditions</a>
+                    </div>
+                    <p style="color:rgba(255,255,255,0.3); font-size:0.8rem;">&copy; 2026 Rasheda Mills. All rights
+                        reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function openModal() {
+            document.getElementById('quizModal').style.display = 'flex';
+            document.body.classList.add('modal-open');
+        }
+
+        function closeModal(event) {
+            document.getElementById('quizModal').style.display = 'none';
+            document.body.classList.remove('modal-open');
+        }
+    </script>
+
+</body>
+
+</html>

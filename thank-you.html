@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You | Rasheda Mills Virtual Event</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-dark: #0a0a0a;
+            --text-primary: #0a0a0a;
+            --text-secondary: #4a4a4a;
+            --accent-gold: #c5a059;
+            --border: rgba(0, 0, 0, 0.08);
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .icon {
+            font-size: 5rem;
+            color: var(--accent-gold);
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        p {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: #fff;
+            padding: 1.2rem 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            margin: 0.5rem;
+            transition: var(--transition);
+        }
+
+        .btn-gold {
+            background: var(--accent-gold);
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .footer-logo {
+            margin-top: 4rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 1.2rem;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="icon">✨</div>
+        <h1>You're In!</h1>
+        <p>Your pre-qualification application has been received. Please check your email for the next steps and your
+            virtual admission ticket.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 1rem; align-items: center;">
+            <a href="https://www.facebook.com/share/1JPW3qCrEF/?mibextid=wwXIfr" target="_blank"
+                class="btn btn-gold">Join the Community</a>
+            <a href="index.html" class="btn">Return to Homepage</a>
+        </div>
+
+        <div class="footer-logo">Rasheda Mills</div>
+    </div>
+
+</body>
+
+</html>

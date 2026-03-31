@@ -1,15 +1,1215 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rasheda Mills | Credit Architect and Fintech Founder</title>
-    <meta name="description" content="Rasheda Mills is the founder of Credit Remedi and creator of Meet Ally, an AI powered credit assistant helping consumers repair their credit and helping entrepreneurs build profitable credit businesses.">
+    <meta name="description"
+        content="Rasheda Mills is the founder of Credit Remedi and creator of Meet Ally, an AI powered credit assistant helping consumers repair their credit and helping entrepreneurs build profitable credit businesses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-secondary: #f8f9fa;
+            --bg-dark: #0a0a0a;
+            --text-primary: #0a0a0a;
+            --text-secondary: #4a4a4a;
+            --text-muted: #8a8a8a;
+            --text-light: #ffffff;
+            --accent: #1a1a1a;
+            --border: rgba(0, 0, 0, 0.08);
+            --border-light: rgba(255, 255, 255, 0.1);
+            --container-width: 1200px;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--bg-primary);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--bg-dark);
+            border: 3px solid var(--bg-primary);
+            border-radius: 100px;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-primary);
+            background-color: var(--bg-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body.no-scroll {
+            overflow: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            line-height: 1.1;
+            color: var(--text-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            display: block;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .luxury-bg {
+            background-color: var(--bg-secondary);
+        }
+
+        /* Navbar */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+
+        .nav-links a:hover {
+            color: var(--text-primary);
+        }
+
+        .nav-cta {
+            background: var(--bg-dark);
+            color: var(--text-light) !important;
+            padding: 0.8rem 1.5rem;
+            border-radius: 4px;
+            font-weight: 600 !important;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .mobile-menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .mobile-menu-toggle span {
+            display: block;
+            width: 24px;
+            height: 2px;
+            background: var(--bg-dark);
+            margin: 5px 0;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .mobile-menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 100px 0;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            
+            
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        .section-header {
+            margin-bottom: 4rem;
+            max-width: 700px;
+        }
+
+        .section-header.center {
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2.2rem;
+                letter-spacing: -1px;
+            }
+        }
+
+        .section-intro,
+        .section-description {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding-top: 80px;
+            /* Reduced to account for 100vh flex centering */
+            padding-bottom: 0;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 2rem;
+        }
+
+        .hero-section h1 {
+            font-size: 5.5rem;
+            line-height: 0.9;
+            margin-bottom: 1.5rem;
+            letter-spacing: -4px;
+        }
+
+        @media (max-width: 1024px) {
+            .hero-section h1 {
+                font-size: 4.5rem;
+                letter-spacing: -3px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 3.2rem;
+                letter-spacing: -2px;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            max-width: 540px;
+            margin-bottom: 2.5rem;
+        }
+
+        .authority-line {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        @media (max-width: 768px) {
+            .authority-line {
+                justify-content: center;
+                gap: 1rem;
+            }
+        }
+
+        .authority-line .dot {
+            width: 4px;
+            height: 4px;
+            background: var(--text-muted);
+            border-radius: 50%;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        @media (max-width: 580px) {
+            .hero-btns {
+                flex-direction: column;
+                width: 100%;
+                gap: 1rem;
+            }
+
+            .hero-btns .btn {
+                width: 100%;
+            }
+        }
+
+        .btn {
+            padding: 1.2rem 2.5rem;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: var(--text-primary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--bg-secondary);
+        }
+
+        .btn-text {
+            padding: 1rem 0;
+            color: var(--text-primary);
+            font-weight: 700;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+        }
+
+        .image-frame {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 4/5;
+            background: var(--bg-secondary);
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(10%) contrast(105%);
+        }
+
+        .experience-badge {
+            position: absolute;
+            bottom: -30px;
+            left: -30px;
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 2rem;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+        }
+
+        @media (max-width: 768px) {
+            .experience-badge {
+                padding: 1.5rem;
+                left: 0;
+                bottom: -20px;
+            }
+
+            .experience-badge .number {
+                font-size: 2rem;
+            }
+        }
+
+        .experience-badge .number {
+            font-size: 2.5rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            line-height: 1;
+        }
+
+        .experience-badge .text {
+            font-size: 0.8rem;
+            opacity: 0.7;
+            margin-top: 5px;
+        }
+
+        /* About Section */
+        .about-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.4rem;
+            color: var(--text-secondary);
+        }
+
+        @media (max-width: 768px) {
+            .about-text {
+                font-size: 1.15rem;
+            }
+        }
+
+        .about-text p {
+            margin-bottom: 2rem;
+        }
+
+        /* Ecosystem Section */
+        .ecosystem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+
+        .eco-card {
+            background: var(--bg-primary);
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .eco-card:hover {
+            border-color: var(--text-primary);
+            transform: translateY(-10px);
+        }
+
+        .card-icon {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin-bottom: 2rem;
+            display: inline-block;
+            padding-bottom: 5px;
+            border-bottom: 1px solid var(--border);
+            width: fit-content;
+        }
+
+        .eco-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .eco-card p {
+            color: var(--text-secondary);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            flex-grow: 1;
+        }
+
+        .card-btn {
+            font-weight: 700;
+            font-size: 0.9rem;
+            margin-top: auto;
+        }
+
+        /* Featured Content */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        @media (max-width: 1024px) {
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .video-item h3 {
+            margin-top: 1.5rem;
+            font-size: 1.25rem;
+        }
+
+        .video-placeholder {
+            aspect-ratio: 16/9;
+            background: var(--bg-dark);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .video-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            transition: var(--transition);
+        }
+
+        .video-placeholder:hover img {
+            transform: scale(1.05);
+            opacity: 0.9;
+        }
+
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60px;
+            height: 60px;
+            background: var(--bg-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .play-btn::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 0 10px 18px;
+            border-color: transparent transparent transparent var(--bg-dark);
+            margin-left: 4px;
+        }
+
+        /* Work Options */
+        .work-options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1.5rem;
+        }
+
+        .work-option {
+            background: var(--bg-primary);
+            padding: 3rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .work-option span:first-child {
+            font-size: 0.8rem;
+            font-weight: 800;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .work-option h3 {
+            font-size: 1.75rem;
+        }
+
+        .work-option .arrow {
+            position: absolute;
+            bottom: 3rem;
+            right: 3rem;
+            font-size: 1.5rem;
+            opacity: 0.3;
+        }
+
+        .work-option:hover {
+            background: var(--bg-dark);
+        }
+
+        .work-option:hover h3,
+        .work-option:hover span:first-child {
+            color: var(--text-light);
+        }
+
+        .work-option:hover .arrow {
+            opacity: 1;
+            color: var(--text-light);
+        }
+
+        /* Media Section */
+        .media-header {
+            margin-bottom: 60px;
+        }
+
+        .media-intro {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 100px;
+        }
+
+        .media-topics h3,
+        .media-available h3 {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 1rem;
+        }
+
+        .topics-list li {
+            padding: 1rem 0;
+            border-bottom: 1px solid var(--border);
+            color: var(--text-secondary);
+        }
+
+        .available-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .available-tags span {
+            padding: 0.8rem 1.5rem;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 4px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        .media-featured {
+            margin-bottom: 100px;
+        }
+
+        .media-featured h3 {
+            margin-bottom: 3rem;
+            text-align: center;
+        }
+
+        .featured-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .featured-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .featured-item.large {
+                grid-row: auto;
+                aspect-ratio: 16/9;
+            }
+
+            .featured-item {
+                aspect-ratio: 16/9;
+            }
+        }
+
+        .featured-item {
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--bg-secondary);
+            position: relative;
+        }
+
+        .featured-label {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1.5rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            color: var(--text-light);
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .featured-item.large {
+            grid-row: span 2;
+        }
+
+        .featured-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .booking-inquiry {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            padding: 5rem;
+            border-radius: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
+        }
+
+        .booking-text h3 {
+            color: var(--text-light);
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .booking-text h3 {
+                font-size: 2rem;
+            }
+        }
+
+        .email-link {
+            display: block;
+            margin-top: 2rem;
+            font-size: 2rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--text-light);
+            width: max-content;
+        }
+
+        @media (max-width: 768px) {
+            .email-link {
+                font-size: 1.2rem;
+                word-break: break-all;
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 480px) {
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-light);
+            padding: 1.2rem;
+            border-radius: 4px;
+            color: var(--text-light);
+            font-family: var(--font-body);
+        }
+
+        .contact-form textarea {
+            height: 150px;
+            resize: none;
+        }
+
+        /* Trust Section */
+        .trust-copy {
+            font-size: 1.5rem;
+        }
+
+        .trust-stats {
+            display: flex;
+            justify-content: center;
+            gap: 6rem;
+            margin-top: 5rem;
+        }
+
+        .stat-item {
+            text-align: center;
+        }
+
+        .stat-num {
+            display: block;
+            font-size: 4rem;
+            font-family: var(--font-heading);
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            color: var(--text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 5rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+                margin-top: 3rem;
+            }
+        }
+
+        .testimonial-card {
+            background: var(--bg-primary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .testimonial-card p {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-bottom: 1.5rem;
+        }
+
+        .testimonial-author {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--text-primary);
+        }
+
+        /* Newsletter Section */
+        .newsletter-card {
+            background: var(--bg-secondary);
+            padding: 5rem;
+            border-radius: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .newsletter-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 1rem;
+            width: 60%;
+        }
+
+        .newsletter-form input {
+            flex: 1;
+            padding: 1.2rem;
+            border: 1px solid var(--border);
+            border-radius: 4px;
+        }
+
+        .btn-dark {
+            background: var(--bg-dark);
+            color: var(--text-light);
+            border: none;
+        }
+
+        /* Social Section */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .social-links {
+                gap: 2rem;
+                flex-wrap: wrap;
+            }
+
+            .social-link {
+                font-size: 1rem;
+            }
+        }
+
+        .social-link {
+            font-weight: 700;
+            font-size: 1.2rem;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .social-link:hover {
+            border-color: var(--text-primary);
+            transform: translateY(-5px);
+        }
+
+        /* Footer */
+        .footer {
+            padding: 80px 0 40px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 4rem;
+        }
+
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .footer-nav {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .footer-bottom {
+            grid-column: span 2;
+            margin-top: 50px;
+            border-top: 1px solid var(--border);
+            padding-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s forwards;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in:nth-child(2) {
+            animation-delay: 0.1s;
+        }
+
+        .fade-in:nth-child(3) {
+            animation-delay: 0.2s;
+        }
+
+        .fade-in:nth-child(4) {
+            animation-delay: 0.3s;
+        }
+
+        .fade-in:nth-child(5) {
+            animation-delay: 0.4s;
+        }
+
+        /* Responsive Adjustments */
+
+        /* Tablets (landscape) and smaller laptops */
+        @media (max-width: 1024px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .hero-description {
+                margin: 0 auto 2.5rem;
+            }
+
+            .authority-line {
+                justify-content: center;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-image-wrapper {
+                max-width: 500px;
+                margin: 0 auto;
+            }
+
+            .ecosystem-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .video-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        /* Tablets (portrait) and large phones */
+        @media (max-width: 768px) {
+            html {
+                scroll-snap-type: none;
+            }
+
+            section {
+                min-height: auto;
+                padding: 60px 0;
+            }
+
+            .navbar {
+                height: 70px;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: var(--bg-primary);
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 2rem;
+                transform: translateX(100%);
+                transition: var(--transition);
+                z-index: 1000;
+                padding: 2rem;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .nav-links a {
+                font-size: 1.5rem;
+                font-weight: 700;
+            }
+
+            .mobile-menu-toggle {
+                display: block;
+            }
+
+            .ecosystem-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-options-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .media-grid {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .featured-grid {
+                grid-template-columns: 1fr;
+                grid-template-rows: auto;
+            }
+
+            .booking-inquiry {
+                grid-template-columns: 1fr;
+                padding: 2.5rem 1.5rem;
+                gap: 3rem;
+                text-align: center;
+            }
+
+            .trust-stats {
+                flex-direction: column;
+                gap: 3rem;
+            }
+
+            .newsletter-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 3rem 1.5rem;
+            }
+
+            .newsletter-form {
+                width: 100%;
+                flex-direction: column;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+                gap: 3rem;
+            }
+
+            .footer-nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+            }
+        }
+
+        /* Small phones */
+        @media (max-width: 480px) {
+            .badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+            }
+
+            .hero-section h1 {
+                font-size: 2.8rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .hero-btns {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+                padding: 1rem 1.5rem;
+            }
+
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .work-option {
+                padding: 2rem;
+            }
+
+            .stat-num {
+                font-size: 3rem;
+            }
+        }
+
+        /* Very narrow screens (320px) */
+        @media (max-width: 340px) {
+            .hero-section h1 {
+                font-size: 2.4rem;
+            }
+
+            .authority-line {
+                font-size: 0.75rem;
+            }
+
+            .email-link {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
+
 <body>
     <div id="app">
         <!-- Navigation -->
@@ -38,7 +1238,9 @@
                         <div class="badge fade-in">Fintech Founder | Credit Architect</div>
                         <h1 class="fade-in">Rasheda Mills</h1>
                         <p class="subtitle fade-in">Credit Architect | Fintech Founder | Speaker</p>
-                        <p class="hero-description fade-in">Founder of Credit Remedi and creator of Meet Ally, an AI powered credit assistant helping consumers repair their credit and helping entrepreneurs build profitable credit businesses.</p>
+                        <p class="hero-description fade-in">Founder of Credit Remedi and creator of Meet Ally, an AI
+                            powered credit assistant helping consumers repair their credit and helping entrepreneurs
+                            build profitable credit businesses.</p>
                         <div class="authority-line fade-in">
                             <span>Founder of Credit Remedi</span>
                             <span class="dot"></span>
@@ -52,69 +1254,289 @@
                     </div>
                     <div class="hero-image-wrapper fade-in">
                         <div class="image-frame">
-                            <img src="./assets/rasheda-hero.jpg" alt="Rasheda Mills" class="hero-img">
+                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c22feb3e56b90f82a8e741.jpg"
+                                alt="Rasheda Mills" class="hero-img">
                         </div>
-                        <div class="experience-badge">
-                            <span class="number">16+</span>
-                            <span class="text">Years of<br>Expertise</span>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Rasheda Mills Section 2: About (FULL WIDTH FIX) -->
+        <style>
+            .ghl-custom-about {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                position: relative !important;
+                background-color: #ffffff !important;
+                min-height: 100vh !important;
+                width: 100vw !important;
+                left: 50% !important;
+                right: 50% !important;
+                margin-left: -50vw !important;
+                margin-right: -50vw !important;
+                font-family: 'Inter', sans-serif !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+                padding: 100px 0 !important;
+            }
+
+            .ghl-custom-about .container {
+                max-width: 1200px !important;
+                width: 90% !important;
+                margin: 0 auto !important;
+            }
+
+            .ghl-custom-about .about-grid {
+                display: grid !important;
+                grid-template-columns: 1fr 1.2fr !important;
+                gap: 5rem !important;
+                align-items: center !important;
+            }
+
+            .ghl-custom-about .about-image {
+                width: 100% !important;
+                border-radius: 12px !important;
+                object-fit: cover !important;
+                box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1) !important;
+                max-height: 700px !important;
+            }
+
+            .ghl-custom-about .section-title {
+                font-family: 'Outfit', sans-serif !important;
+                font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+                font-weight: 800 !important;
+                margin-bottom: 2rem !important;
+                letter-spacing: -2px !important;
+                color: #0a0a0a !important;
+            }
+
+            .ghl-custom-about .about-text {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 2rem !important;
+                font-size: 1.15rem !important;
+                color: #4a4a4a !important;
+                line-height: 1.7 !important;
+            }
+
+            .ghl-custom-about .about-block {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 1rem !important;
+            }
+
+            .ghl-custom-about .about-block img {
+                height: auto !important; max-height: 40px !important; width: auto !important; max-width: 200px !important; object-position: left !important;
+                object-fit: contain !important;
+                align-self: flex-start !important;
+            }
+
+            @media (max-width: 1024px) {
+                .ghl-custom-about .about-grid {
+                    grid-template-columns: 1fr !important;
+                    gap: 4rem !important;
+                }
+
+                .ghl-custom-about .about-image {
+                    max-height: 500px !important;
+                }
+            }
+        </style>
+
+        <section id="about" class="ghl-custom-about">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="image-wrapper">
+                        <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c22feb427f6e625863ab88.jpg"
+                            alt="Rasheda Mills" class="about-image">
+                    </div>
+                    <div>
+                        <h2 class="section-title">Meet Rasheda</h2>
+                        <div class="about-text">
+                            <p>Rasheda Mills is a fintech founder and credit strategist with more than sixteen years of
+                                entrepreneurial experience.</p>
+
+                            <div class="about-block">
+                                <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c6833834bd32f961deed8e.png"
+                                    alt="Credit Remedi">
+                                <p>As the founder of Credit Remedi she developed systems designed to help consumers
+                                    repair their credit and position themselves for real funding opportunities.</p>
+                            </div>
+
+                            <div class="about-block">
+                                <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c68338a235ae5985a8408c.png"
+                                    alt="Meet Ally">
+                                <p>She is also the creator of Meet Ally, an AI powered credit assistant built to
+                                    simplify credit education, dispute strategies, and financial literacy.</p>
+                            </div>
+
+                            <p>Through her ecosystem of services, software, and education platforms, Rasheda helps
+                                individuals improve their credit profiles while also teaching entrepreneurs how to build
+                                profitable credit businesses.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 2: About Rasheda -->
-        <section id="about" class="about-section">
-            <div class="container">
-                <div class="section-header center">
-                    <h2 class="section-title">Meet Rasheda</h2>
-                </div>
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>Rasheda Mills is a fintech founder and credit strategist with more than sixteen years of entrepreneurial experience.</p>
-                        <p>As the founder of Credit Remedi she developed systems designed to help consumers repair their credit and position themselves for real funding opportunities.</p>
-                        <p>She is also the creator of Meet Ally, an AI powered credit assistant built to simplify credit education, dispute strategies, and financial literacy.</p>
-                        <p>Through her ecosystem of services, software, and education platforms, Rasheda helps individuals improve their credit profiles while also teaching entrepreneurs how to build profitable credit businesses.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Rasheda Mills Section 3: The Ecosystem (FULL WIDTH FIX) -->
+        <style>
+            .ghl-custom-ecosystem {
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                position: relative !important;
+                background-color: #f8f9fa !important;
+                min-height: 100vh !important;
+                width: 100vw !important;
+                /* Force browser width */
+                left: 50% !important;
+                right: 50% !important;
+                margin-left: -50vw !important;
+                margin-right: -50vw !important;
+                font-family: 'Inter', sans-serif !important;
+                box-sizing: border-box !important;
+                overflow: hidden !important;
+            }
 
-        <!-- Section 3: The Credit Architect Ecosystem -->
-        <section id="ecosystem" class="ecosystem-section luxury-bg">
+            .ghl-custom-ecosystem .container {
+                max-width: 1200px !important;
+                /* This keeps the cards "Tight" */
+                width: 90% !important;
+                margin: 0 auto !important;
+            }
+
+            .ghl-custom-ecosystem .section-title {
+                font-family: 'Outfit', sans-serif !important;
+                font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+                font-weight: 800 !important;
+                margin-bottom: 1.5rem !important;
+                letter-spacing: -2px !important;
+                color: #0a0a0a !important;
+            }
+
+            .ghl-custom-ecosystem .section-intro {
+                font-size: 1.25rem !important;
+                color: #4a4a4a !important;
+                line-height: 1.6 !important;
+                margin-bottom: 4rem !important;
+                max-width: 700px !important;
+            }
+
+            /* --- Tighter Card Grid --- */
+            .ghl-custom-ecosystem .ecosystem-grid {
+                display: grid !important;
+                grid-template-columns: repeat(4, 1fr) !important;
+                gap: 1.5rem !important;
+                /* Tighter gap */
+            }
+
+            /* --- Ecosystem Grid & Cards (NO HOVER LIFT) --- */
+            /* --- Ecosystem Grid & Cards (Cards no longer lift up) --- */
+            .ghl-custom-ecosystem .eco-card {
+                background: #ffffff !important;
+                padding: 2.5rem 1.5rem !important;
+                border-radius: 12px !important;
+                border: 1px solid rgba(0, 0, 0, 0.08) !important;
+                transition: all 0.4s ease !important;
+                display: flex !important;
+                flex-direction: column !important;
+            }
+
+            /* No transform here - card stays still */
+            .ghl-custom-ecosystem .eco-card:hover {
+                border-color: #0a0a0a !important;
+            }
+
+            /* --- Keep the Hover Effect on the BUTTON ONLY --- */
+            .ghl-custom-ecosystem .card-btn {
+                font-weight: 700 !important;
+                color: #0a0a0a !important;
+                text-decoration: none !important;
+                display: inline-flex !important;
+                align-items: center !important;
+                gap: 8px !important;
+                transition: all 0.3s ease !important;
+            }
+
+            .ghl-custom-ecosystem .card-btn:hover {
+                transform: translateX(5px) !important;
+                /* Moves only the button text right */
+            }
+
+            /* Slides only the arrow character on hover */
+            .ghl-custom-ecosystem .card-btn span {
+                display: inline-block !important;
+                transition: transform 0.3s ease !important;
+            }
+
+            .ghl-custom-ecosystem .card-btn:hover span {
+                transform: translateX(8px) !important;
+            }
+
+
+            .ghl-custom-ecosystem .eco-card h3 {
+                font-family: 'Outfit', sans-serif !important;
+                font-weight: 700 !important;
+                font-size: 1.4rem !important;
+                margin: 0 0 1rem 0 !important;
+                color: #0a0a0a !important;
+            }
+
+            .ghl-custom-ecosystem .eco-card p {
+                color: #4a4a4a !important;
+                margin-bottom: 1.5rem !important;
+                font-size: 0.9rem !important;
+                line-height: 1.6 !important;
+                flex-grow: 1 !important;
+            }
+
+            @media (max-width: 1024px) {
+                .ghl-custom-ecosystem .ecosystem-grid {
+                    grid-template-columns: repeat(2, 1fr) !important;
+                }
+            }
+
+            @media (max-width: 768px) {
+                .ghl-custom-ecosystem .ecosystem-grid {
+                    grid-template-columns: 1fr !important;
+                }
+            }
+        </style>
+
+        <section id="ecosystem" class="ghl-custom-ecosystem">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">The Credit Architect Ecosystem</h2>
-                    <p class="section-intro">Through Credit Remedi and Meet Ally, Rasheda Mills has created an ecosystem designed to help consumers repair their credit and entrepreneurs build sustainable businesses in the credit industry.</p>
-                </div>
+                <h2 class="section-title">The Credit Architect Ecosystem</h2>
+                <p class="section-intro">Through Credit Remedi and Meet Ally, Rasheda Mills has created an ecosystem
+                    designed to help consumers repair their credit.</p>
                 <div class="ecosystem-grid">
-                    <!-- Card 1 -->
                     <div class="eco-card">
-                        <div class="card-icon">01</div>
                         <h3>Credit Remedi</h3>
-                        <p>Credit repair and funding positioning services designed to help consumers correct inaccurate reporting and strengthen their financial profile.</p>
-                        <a href="#" class="card-btn">Fix Your Credit &rarr;</a>
+                        <p>Credit repair and funding positioning services designed to help consumers correct reporting.
+                        </p>
+                        <a href="https://remedicredit.com/" target="_blank" class="card-btn">Fix Your Credit <span
+                                style="transition:0.3s;">&rarr;</span></a>
                     </div>
-                    <!-- Card 2 -->
                     <div class="eco-card">
-                        <div class="card-icon">02</div>
                         <h3>Meet Ally</h3>
-                        <p>An AI powered credit assistant designed to simplify credit education, dispute strategies, and financial literacy.</p>
-                        <a href="#" class="card-btn">Meet Ally &rarr;</a>
+                        <p>An AI powered credit assistant designed to simplify credit education and financial literacy.
+                        </p>
+                        <a href="https://remedicredit.com/" target="_blank" class="card-btn">Meet Ally <span
+                                style="transition:0.3s;">&rarr;</span></a>
                     </div>
-                    <!-- Card 3 -->
                     <div class="eco-card">
-                        <div class="card-icon">03</div>
-                        <h3>Credit Business Mentorship</h3>
-                        <p>Training and mentorship designed to help entrepreneurs start and scale profitable credit businesses using proven systems and automation.</p>
-                        <a href="#" class="card-btn">Start a Credit Business &rarr;</a>
+                        <h3>Mentorship</h3>
+                        <p>Training designed to help entrepreneurs start and scale profitable credit businesses.</p>
+                        <a href="./challenge.html" class="card-btn">Join Challenge <span
+                                style="transition:0.3s;">&rarr;</span></a>
                     </div>
-                    <!-- Card 4 -->
                     <div class="eco-card">
-                        <div class="card-icon">04</div>
                         <h3>Credit Community</h3>
-                        <p>A community focused on credit education, live credit audits, accountability, and financial growth.</p>
-                        <a href="#" class="card-btn">Join the Community &rarr;</a>
+                        <p>A community focused on credit education, live credit audits, and accountability.</p>
+                        <a href="#" class="card-btn">Join Community <span style="transition:0.3s;">&rarr;</span></a>
                     </div>
                 </div>
             </div>
@@ -125,7 +1547,8 @@
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Watch and Learn</h2>
-                    <p class="section-description">Explore credit education, business strategy, and insights on building systems that work.</p>
+                    <p class="section-description">Explore credit education, business strategy, and insights on building
+                        systems that work.</p>
                 </div>
                 <div class="video-grid">
                     <div class="video-item">
@@ -161,22 +1584,18 @@
                 </div>
                 <div class="work-options-grid">
                     <a href="#" class="work-option">
-                        <span>01</span>
                         <h3>Fix Your Credit With My Team</h3>
                         <span class="arrow">&rarr;</span>
                     </a>
-                    <a href="#" class="work-option">
-                        <span>02</span>
+                    <a href="./challenge.html" class="work-option">
                         <h3>Start a Credit Business</h3>
                         <span class="arrow">&rarr;</span>
                     </a>
                     <a href="#" class="work-option">
-                        <span>03</span>
                         <h3>Join the Credit Community</h3>
                         <span class="arrow">&rarr;</span>
                     </a>
                     <a href="#" class="work-option">
-                        <span>04</span>
                         <h3>Speaking and Partnerships</h3>
                         <span class="arrow">&rarr;</span>
                     </a>
@@ -190,8 +1609,12 @@
                 <div class="media-header">
                     <div class="media-title-group">
                         <h2 class="section-title">Media and Speaking</h2>
-                        <p class="media-intro">Rasheda Mills is a fintech founder and credit strategist known for building systems that help consumers repair their credit and position themselves for stronger financial opportunities.</p>
-                        <p>As the founder of Credit Remedi and creator of Meet Ally, she speaks on credit systems, financial literacy, entrepreneurship, and building technology solutions in the credit industry.</p>
+                        <p class="media-intro">Rasheda Mills is a fintech founder and credit strategist known for
+                            building systems that help consumers repair their credit and position themselves for
+                            stronger financial opportunities.</p>
+                        <p>As the founder of Credit Remedi and creator of Meet Ally, she speaks on credit systems,
+                            financial literacy, entrepreneurship, and building technology solutions in the credit
+                            industry.</p>
                     </div>
                 </div>
 
@@ -238,23 +1661,134 @@
                     </div>
                 </div>
 
-                <div class="booking-inquiry" id="contact">
-                    <div class="booking-text">
-                        <h3>Booking and Media Inquiries</h3>
-                        <p>For speaking engagements, podcast invitations, or media inquiries please contact</p>
-                        <a href="mailto:media@rashedamills.com" class="email-link">media@rashedamills.com</a>
-                    </div>
-                    <div class="contact-form-wrapper">
-                        <form class="contact-form">
-                            <div class="form-row">
-                                <input type="text" placeholder="Your Name" required>
-                                <input type="email" placeholder="Email Address" required>
+                <!-- Rasheda Mills Section 8: Booking and Inquiries -->
+                <style>
+                    .ghl-custom-booking {
+                        display: flex !important;
+                        align-items: center !important;
+                        justify-content: center !important;
+                        position: relative !important;
+                        background-color: #ffffff !important;
+                        min-height: 100vh !important;
+                        width: 100% !important;
+                        padding: 100px 0 !important;
+                        font-family: 'Inter', sans-serif !important;
+                    }
+
+                    .ghl-custom-booking .container {
+                        max-width: 1200px !important;
+                        width: 90% !important;
+                        margin: 0 auto !important;
+                    }
+
+                    .ghl-custom-booking .booking-grid {
+                        display: grid !important;
+                        grid-template-columns: 0.8fr 1.2fr !important;
+                        gap: 6rem !important;
+                        align-items: flex-start !important;
+                    }
+
+                    /* Left Column: Info */
+                    .ghl-custom-booking .section-title {
+                        font-family: 'Outfit', sans-serif !important;
+                        font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
+                        font-weight: 800 !important;
+                        margin-bottom: 1.5rem !important;
+                        letter-spacing: -2px !important;
+                        color: #0a0a0a !important;
+                    }
+
+                    .ghl-custom-booking .booking-description {
+                        color: #666666 !important;
+                        font-size: 1.1rem !important;
+                        line-height: 1.6 !important;
+                        margin-bottom: 3rem !important;
+                    }
+
+                    .ghl-custom-booking .contact-details {
+                        font-size: 1rem !important;
+                        color: #0a0a0a !important;
+                    }
+
+                    .ghl-custom-booking .contact-details strong {
+                        display: block !important;
+                        margin-bottom: 0.5rem !important;
+                        text-transform: uppercase !important;
+                        font-size: 0.8rem !important;
+                        letter-spacing: 1px !important;
+                        color: #8a8a8a !important;
+                    }
+
+                    .ghl-custom-booking .contact-details a {
+                        color: #0a0a0a !important;
+                        text-decoration: none !important;
+                        font-weight: 700 !important;
+                        font-size: 1.2rem !important;
+                        transition: 0.3s !important;
+                    }
+
+                    .ghl-custom-booking .contact-details a:hover {
+                        opacity: 0.6;
+                    }
+
+                    /* Right Column: Form */
+                    .ghl-custom-booking .form-wrapper {
+                        background: transparent !important;
+                        padding: 0 !important;
+                        border: none !important;
+                    }
+
+                    @media (max-width: 1024px) {
+                        .ghl-custom-booking .booking-grid {
+                            grid-template-columns: 1fr !important;
+                            gap: 4rem !important;
+                        }
+
+                        .ghl-custom-booking .form-wrapper {
+                            padding: 0 !important;
+                        }
+                    }
+                </style>
+
+                <section id="contact" class="ghl-custom-booking">
+                    <div class="container">
+                        <div class="booking-grid">
+                            <!-- Information Column -->
+                            <div class="booking-info">
+                                <h2 class="section-title">Booking and Inquiries</h2>
+                                <p class="booking-description">Interested in working with Rasheda or booking her for an
+                                    upcoming event? Please provide details about your inquiry and we will get back to
+                                    you shortly.</p>
+
+                                <div class="contact-details">
+                                    <div style="margin-bottom: 2.5rem;">
+                                        <strong>General Inquiries</strong>
+                                        <a href="mailto:hello@rashedamills.com">hello@rashedamills.com</a>
+                                    </div>
+                                    <div>
+                                        <strong>Media and Press</strong>
+                                        <a href="mailto:media@rashedamills.com">media@rashedamills.com</a>
+                                    </div>
+                                </div>
                             </div>
-                            <textarea placeholder="Tell me more about your request..."></textarea>
-                            <button type="submit" class="btn btn-primary">Send Inquiry</button>
-                        </form>
+
+                            <!-- Form Column -->
+                            <div class="form-wrapper" style="width: 100%; box-sizing: border-box; overflow: visible;">
+                                <iframe src="https://api.leadconnectorhq.com/widget/form/vvf8fdweH2kzZCNSwvVh"
+                                    style="width: 100%; min-height: 600px; border: none; overflow: visible;"
+                                    id="inline-vvf8fdweH2kzZCNSwvVh" data-layout="{'id':'INLINE'}"
+                                    data-trigger-type="alwaysShow" data-trigger-value=""
+                                    data-activation-type="alwaysActivated" data-activation-value=""
+                                    data-deactivation-type="neverDeactivate" data-deactivation-value=""
+                                    data-form-name="Bookings & Inquiry Form" data-height="511"
+                                    data-layout-iframe-id="inline-vvf8fdweH2kzZCNSwvVh"
+                                    data-form-id="vvf8fdweH2kzZCNSwvVh" title="Bookings & Inquiry Form">
+                                </iframe>
+                                <script src="https://link.msgsndr.com/js/form_embed.js"></script>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </section>
             </div>
         </section>
 
@@ -263,7 +1797,9 @@
             <div class="container">
                 <div class="section-header center">
                     <h2 class="section-title">Trusted by Thousands</h2>
-                    <p class="trust-copy">Through Credit Remedi thousands of consumers have received guidance on correcting their credit reports and positioning themselves for stronger financial opportunities.</p>
+                    <p class="trust-copy">Through Credit Remedi thousands of consumers have received guidance on
+                        correcting their credit reports and positioning themselves for stronger financial opportunities.
+                    </p>
                 </div>
                 <div class="trust-stats">
                     <div class="stat-item">
@@ -281,11 +1817,13 @@
                 </div>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <p>"Rasheda's systems completely transformed my understanding of credit. I went from denied to funded in 6 months."</p>
+                        <p>"Rasheda's systems completely transformed my understanding of credit. I went from denied to
+                            funded in 6 months."</p>
                         <div class="testimonial-author">- Sarah J., Entrepreneur</div>
                     </div>
                     <div class="testimonial-card">
-                        <p>"Meet Ally is a game changer for my business. The AI insights saved me hundreds of hours."</p>
+                        <p>"Meet Ally is a game changer for my business. The AI insights saved me hundreds of hours."
+                        </p>
                         <div class="testimonial-author">- Marcus T., Credit Strategist</div>
                     </div>
                 </div>
@@ -293,12 +1831,13 @@
         </section>
 
         <!-- Section 9: Email Capture -->
-        <section class="newsletter-section">
+        <section class="engage-section" style="display: flex; flex-direction: column; min-height: 80vh; justify-content: center; padding: 60px 0;"><div class="newsletter-section" style="width: 100%;">
             <div class="container">
                 <div class="newsletter-card">
                     <div class="newsletter-content">
                         <h2>Get Credit Insights</h2>
-                        <p>Join the email list to receive credit education, dispute strategies, and financial insights.</p>
+                        <p>Join the email list to receive credit education, dispute strategies, and financial insights.
+                        </p>
                     </div>
                     <form class="newsletter-form">
                         <input type="text" placeholder="Name" required>
@@ -307,10 +1846,7 @@
                     </form>
                 </div>
             </div>
-        </section>
-
-        <!-- Section 8: Connect -->
-        <section class="social-section">
+        </div><!-- Section 8: Connect --><div class="social-section" style="width: 100%; margin-top: -40px;">
             <div class="container">
                 <div class="section-header center">
                     <h2 class="section-title">Stay Connected</h2>
@@ -322,15 +1858,30 @@
                     <a href="#" class="social-link">Threads</a>
                 </div>
             </div>
+        </div>
         </section>
 
         <!-- Section 10: Footer -->
+        <style> .footer { background-color: #0a0a0a !important; color: #ffffff !important; border-top: none !important; } .footer a { color: #ffffff !important; } </style>
         <footer class="footer">
             <div class="container">
                 <div class="footer-grid">
                     <div class="footer-brand">
                         <div class="footer-logo">Rasheda Mills</div>
                         <p>Credit Architect | Fintech Founder | Speaker</p>
+                        <p
+                            style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; opacity: 0.5; margin-top: 25px; margin-bottom: 10px;">
+                            Powered By</p>
+                        <div style="display: flex; gap: 20px; align-items: center;">
+                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c6833834bd32f961deed8e.png"
+                                alt="Credit Remedi"
+                                style="height: 35px; object-fit: contain; opacity: 0.9; transition: all 0.3s; cursor: pointer;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
+                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c68338a235ae5985a8408c.png"
+                                alt="Waitlist Ally"
+                                style="height: 35px; object-fit: contain; opacity: 0.9; transition: all 0.3s; cursor: pointer;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
+                        </div>
                     </div>
                     <div class="footer-nav">
                         <a href="#">Credit Remedi</a>
@@ -338,9 +1889,24 @@
                         <a href="#">Mentorship</a>
                         <a href="#">Community</a>
                     </div>
-                    <div class="footer-bottom">
-                        <p>&copy; 2026 Rasheda Mills. All rights reserved.</p>
-                        <a href="#" class="privacy-link">Privacy Policy</a>
+                    <div class="footer-bottom"
+                        style="display: flex; flex-direction: column; align-items: center; gap: 1rem; justify-content: center;">
+                        <div class="social-links"
+                            style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 5px;">
+                            <a href="https://Instagram.com/shedamills" target="_blank"
+                                style="color: inherit; text-decoration: none; opacity: 0.6; transition: opacity 0.3s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Instagram</a>
+                            <a href="https://www.facebook.com/share/1UYwyPMt3g/?mibextid=wwXIfr" target="_blank"
+                                style="color: inherit; text-decoration: none; opacity: 0.6; transition: opacity 0.3s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Facebook</a>
+                            <a href="https://www.facebook.com/share/1JPW3qCrEF/?mibextid=wwXIfr" target="_blank"
+                                style="color: inherit; text-decoration: none; opacity: 0.6; transition: opacity 0.3s;"
+                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Community</a>
+                        </div>
+                        <div style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
+                            <p style="margin: 0;">&copy; 2026 Rasheda Mills. All rights reserved.</p>
+                            <a href="#" class="privacy-link" style="margin: 0;">Privacy Policy</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -348,4 +1914,5 @@
     </div>
     <script type="module" src="./main.js"></script>
 </body>
+
 </html>
