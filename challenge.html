@@ -301,15 +301,18 @@
         @media (max-width: 768px) {
             section {
                 min-height: 100vh;
-                padding: 80px 1.5rem;
+                padding: 60px 1.5rem;
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
-                overflow: hidden;
             }
 
             .hero-section {
-                padding-top: 100px;
+                padding-top: 40px;
+            }
+
+            .navbar {
+                display: none !important;
             }
 
             .container {
@@ -397,12 +400,24 @@
                 margin-top: 2rem;
             }
 
-            .navbar .container {
-                justify-content: center;
+            /* Footer Centering */
+            footer .container {
+                flex-direction: column !important;
+                text-align: center !important;
+                gap: 1.5rem !important;
             }
 
-            .navbar a[href*="ecosystem"] {
-                display: none;
+            footer {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+
+            footer div:last-child {
+                align-items: center !important;
+                justify-content: center !important;
+                width: 100%;
+                display: flex !important;
             }
         }
     </style>
