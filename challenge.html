@@ -13,7 +13,6 @@
     <style>
         :root {
             --bg-primary: #ffffff;
-            --bg-secondary: #f8f9fa;
             --bg-dark: #0a0a0a;
             --text-primary: #0a0a0a;
             --text-secondary: #4a4a4a;
@@ -27,178 +26,10 @@
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
-        @media (max-width: 768px) {
-            section {
-                min-height: 100vh;
-                padding: 120px 20px;
-            }
-
-            .hero-section {
-                padding-top: 100px;
-                display: flex;
-                flex-direction: column;
-                justify-content: flex-start;
-            }
-
-            .hero-grid,
-            .bio-grid {
-                display: flex;
-                flex-direction: column;
-                text-align: center;
-                gap: 2.5rem;
-                align-items: center;
-            }
-
-            .hero-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-
-            .hero-content h1 {
-                font-size: 2.1rem;
-                line-height: 1.1;
-                margin-bottom: 1.5rem;
-                letter-spacing: -1.5px;
-            }
-
-            .hero-badge {
-                font-size: 0.7rem;
-                padding: 0.4rem 0.8rem;
-                margin-bottom: 1.2rem;
-            }
-
-            .hero-image-wrapper {
-                display: none;
-            }
-
-            .hero-img {
-                display: none;
-            }
-
-            .btn {
-                width: 100%;
-                max-width: 320px;
-                font-size: 1rem;
-                padding: 1.1rem 2rem;
-                margin: 0 auto;
-                box-sizing: border-box;
-            }
-
-            .btn+.btn {
-                margin-top: 1rem;
-            }
-
-            .section-title {
-                font-size: 2.2rem;
-                margin-bottom: 0.5rem;
-            }
-
-            .learn-subtitle {
-                font-size: 1.1rem;
-                margin-bottom: 2.5rem;
-            }
-
-            .learn-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 1.2rem;
-                width: 100%;
-                pointer-events: none;
-            }
-
-            .learn-card {
-                padding: 1.8rem 1.5rem;
-                border-radius: 12px;
-                background: rgba(255, 255, 255, 0.05);
-            }
-
-            .learn-card h3 {
-                font-size: 1.15rem;
-            }
-
-            .seats-label {
-                font-size: 1.5rem;
-            }
-
-            .progress-bar-container {
-                height: 10px;
-            }
-
-            .bio-image-wrapper {
-                box-shadow: 12px 12px 0 var(--accent-gold);
-                max-width: 280px;
-                margin: 2rem auto;
-                order: 2;
-                /* Move image below header */
-            }
-
-            .bio-grid {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                text-align: center;
-                gap: 0;
-            }
-
-            .bio-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                order: 1;
-                /* Header at the top */
-                width: 100%;
-            }
-
-            .bio-text-wrapper {
-                order: 3;
-                /* Text below image */
-                width: 100%;
-                text-align: center;
-            }
-
-            .bio-title {
-                font-size: 2.2rem;
-                margin-top: 0;
-                text-align: center;
-                width: 100%;
-            }
-
-            .bio-text {
-                font-size: 1rem;
-                line-height: 1.6;
-                text-align: center;
-            }
-
-            .bio-btn {
-                order: 4;
-                margin-top: 2rem;
-            }
-
-            .navbar .container {
-                justify-content: center;
-            }
-
-            .navbar .btn {
-                display: none;
-            }
-
-            .hero-content div[style*="display: flex"] {
-                flex-direction: column;
-                width: 100%;
-                align-items: center;
-            }
-        }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
         }
 
         body {
@@ -207,7 +38,6 @@
             background-color: var(--bg-primary);
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
         }
 
         section {
@@ -217,7 +47,6 @@
             justify-content: center;
             position: relative;
             padding: 100px 0;
-            box-sizing: border-box;
         }
 
         .container {
@@ -232,8 +61,7 @@
             height: 80px;
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.98);
             border-bottom: 1px solid var(--border);
             position: fixed;
             top: 0;
@@ -246,7 +74,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            width: 100%;
         }
 
         .logo {
@@ -259,54 +86,76 @@
 
         /* Hero */
         .hero-section {
-            padding-top: 100px;
-            background: radial-gradient(circle at top right, #fdfbf7 0%, #ffffff 100%);
+            padding-top: 140px;
         }
 
         .hero-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1.2fr 0.8fr;
             gap: 4rem;
             align-items: center;
-            height: 100%;
         }
 
-        .hero-content h1 {
-            font-family: var(--font-heading);
-            font-size: clamp(2.2rem, 4.5vw, 4.5rem);
-            line-height: 1.05;
-            margin-bottom: 1.5rem;
-            letter-spacing: -3px;
-            color: var(--bg-dark);
+        .hero-content {
+            text-align: left;
         }
 
         .hero-badge {
             display: inline-block;
-            margin-bottom: 1rem;
             padding: 0.5rem 1rem;
-            background: rgba(197, 160, 89, 0.1);
-            color: var(--accent-gold);
             border: 1px solid var(--accent-gold);
+            color: var(--accent-gold);
+            font-weight: 800;
             border-radius: 4px;
-            font-weight: 700;
-            font-size: 0.8rem;
+            margin-bottom: 1.5rem;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            font-size: 0.8rem;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(2.5rem, 4.5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
+        }
+
+        .hero-content p {
+            font-size: 1.15rem;
+            color: var(--text-secondary);
+            margin-bottom: 2.5rem;
+            max-width: 550px;
+        }
+
+        .hero-image-wrapper {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-img {
+            width: 100%;
+            max-width: 450px;
+            border-radius: 12px;
+            transform: scale(1.1);
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
         }
 
         .btn {
             display: inline-block;
             background: var(--bg-dark);
             color: var(--text-light);
-            padding: 1.25rem 3rem;
+            padding: 1.2rem 2.8rem;
             font-weight: 700;
             text-decoration: none;
             border-radius: 4px;
-            font-size: 1.1rem;
-            transition: var(--transition);
             text-align: center;
-            border: 2px solid var(--bg-dark);
             cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid var(--bg-dark);
         }
 
         .btn-gold {
@@ -316,30 +165,12 @@
 
         .btn:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(197, 160, 89, 0.2);
-            background: var(--accent-gold);
-            border-color: var(--accent-gold);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .hero-image-wrapper {
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            max-height: 75vh;
-        }
-
-        .hero-img {
-            max-height: 100%;
-            width: auto;
-            border-radius: 12px;
-            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
-            object-fit: contain;
-        }
-
-        /* Learning Grid */
-        .learn-section {
-            background-color: var(--bg-dark);
+        /* Dark Sections */
+        .dark-section {
+            background: var(--bg-dark);
             color: var(--text-light);
         }
 
@@ -355,83 +186,62 @@
             margin-bottom: 1rem;
         }
 
-        .learn-subtitle {
-            font-size: 1.3rem;
+        .section-subtitle {
+            font-size: 1.2rem;
             color: var(--accent-gold);
             font-family: var(--font-heading);
-            font-weight: 600;
-            margin-bottom: 3rem;
         }
 
         .learn-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 2rem;
-            width: 100%;
         }
 
-        .learn-card {
-            background: rgba(255, 255, 255, 0.03);
+        .day-card {
+            background: rgba(255, 255, 255, 0.05);
             padding: 2.5rem;
             border-radius: 8px;
             border: 1px solid rgba(197, 160, 89, 0.2);
-            text-align: center;
-            transition: var(--transition);
         }
 
-        .learn-card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-gold);
-            background: rgba(255, 255, 255, 0.05);
-        }
-
-        .day-label {
+        .day-num {
             color: var(--accent-gold);
             font-weight: 800;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
             text-transform: uppercase;
             margin-bottom: 1rem;
             display: block;
         }
 
-        .learn-card h3 {
-            font-size: 1.4rem;
+        .day-card h3 {
             margin-bottom: 1rem;
             font-family: var(--font-heading);
+            font-size: 1.4rem;
         }
 
-        .learn-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
+        /* Bio */
+        .bio-section {
+            background: #fff;
         }
 
-        /* Scarcity */
-        .seats-block {
-            max-width: 650px;
-            margin: 4rem auto 0;
-            text-align: center;
+        .bio-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 5rem;
+            align-items: center;
         }
 
-        .seats-label {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
+        .bio-img-frame {
+            position: relative;
+            box-shadow: 20px 20px 0 var(--accent-gold);
+            border-radius: 12px;
         }
 
-        .progress-bar-container {
+        .bio-img {
             width: 100%;
-            height: 12px;
-            background: #eee;
-            border-radius: 100px;
-            overflow: hidden;
-        }
-
-        .progress-bar-fill {
-            width: 88%;
-            height: 100%;
-            background: var(--accent-gold);
-            border-radius: 100px;
+            border-radius: 12px;
+            display: block;
         }
 
         /* Modal */
@@ -442,89 +252,156 @@
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.9);
-            backdrop-filter: blur(10px);
             z-index: 2000;
             display: none;
             align-items: center;
             justify-content: center;
-            padding: 20px;
         }
 
         .modal-content {
             background: #fff;
-            max-width: 750px;
-            width: 100%;
-            border-radius: 12px;
+            width: 90%;
+            max-width: 800px;
             padding: 4rem;
+            border-radius: 12px;
             position: relative;
-            max-height: 95vh;
-            overflow-y: auto;
-            text-align: center;
         }
 
         .modal-close {
             position: absolute;
-            top: 25px;
-            right: 25px;
+            top: 20px;
+            right: 20px;
             font-size: 2.5rem;
-            color: var(--bg-dark);
             cursor: pointer;
-            line-height: 1;
         }
 
-        /* Bio */
-        .bio-grid {
-            display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 5rem;
-            align-items: center;
+        /* Scarcity */
+        .progress-container {
+            max-width: 600px;
+            margin: 3rem auto 0;
+            text-align: center;
         }
 
-        .bio-image-wrapper {
-            position: relative;
-            box-shadow: 20px 20px 0 var(--accent-gold);
-            border-radius: 12px;
+        .progress-bar {
+            width: 100%;
+            height: 12px;
+            background: #eee;
+            border-radius: 100px;
+            margin-bottom: 1rem;
             overflow: hidden;
         }
 
-        .bio-img {
-            width: 100%;
-            border-radius: 12px;
-            object-fit: cover;
-            aspect-ratio: 4/5;
+        .progress-fill {
+            width: 88%;
+            height: 100%;
+            background: var(--accent-gold);
         }
 
-        .footer {
-            background: var(--bg-dark);
-            color: var(--text-light);
-            padding: 80px 0;
-            border-top: 5px solid var(--accent-gold);
-        }
-
+        /* MOBILE OVERRIDES - THE FINAL FIX */
         @media (max-width: 768px) {
-
-            .learn-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            section {
+                min-height: 100vh;
+                padding: 80px 1.5rem;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                overflow: hidden;
             }
 
-            .learn-card {
-                padding: 1.2rem;
+            .hero-section {
+                padding-top: 100px;
             }
 
-            .learn-card h3 {
-                font-size: 1.1rem;
+            .container {
+                padding: 0;
             }
 
-            .modal-content {
+            .hero-grid,
+            .learn-grid,
+            .bio-grid {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+                gap: 2rem;
+                width: 100%;
+            }
+
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-content p {
+                text-align: center;
+            }
+
+            .hero-image-wrapper {
+                display: none !important;
+            }
+
+            /* Hide hero image on mobile */
+
+            .btn-group {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                gap: 0.8rem;
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+            }
+
+            .day-card {
+                width: 100%;
                 padding: 2rem 1.5rem;
             }
 
-            .modal-content h3 {
-                font-size: 1.8rem;
+            /* BIO SPECIAL ORDER */
+            .bio-grid {
+                display: flex;
+                flex-direction: column;
             }
 
-            .navbar .btn {
+            .bio-header {
+                order: 1;
+                margin-bottom: 1.5rem;
+            }
+
+            .bio-img-frame {
+                order: 2;
+                margin-bottom: 2rem;
+                max-width: 260px;
+                box-shadow: 12px 12px 0 var(--accent-gold);
+            }
+
+            .bio-text-area {
+                order: 3;
+                text-align: center;
+            }
+
+            .bio-btn {
+                order: 4;
+                margin-top: 2rem;
+            }
+
+            .navbar .container {
+                justify-content: center;
+            }
+
+            .navbar a[href*="ecosystem"] {
                 display: none;
             }
         }
@@ -537,31 +414,27 @@
         <div class="container">
             <a href="index.html" class="logo">RM</a>
             <div style="display: flex; gap: 2rem; align-items: center;">
-                <a href="#about"
-                    style="text-decoration:none; color:var(--text-primary); font-weight:500; font-size:0.9rem;">The
-                    Challenge</a>
-                <button onclick="openModal()" class="btn" style="padding:0.75rem 1.8rem; font-size:0.85rem;">Join the
+                <a href="index.html#ecosystem"
+                    style="color:var(--text-primary); text-decoration:none; font-weight:600; font-size:0.9rem;">Ecosystem</a>
+                <button onclick="openModal()" class="btn" style="padding:0.7rem 1.5rem; font-size:0.85rem;">Join
                     Challenge</button>
             </div>
         </div>
     </nav>
 
-    <!-- Hero -->
+    <!-- SECTION 1: HERO -->
     <section class="hero-section">
         <div class="container">
             <div class="hero-grid">
                 <div class="hero-content">
-                    <div class="hero-badge">3-DAY LIVE EXPERIENCE</div>
+                    <div class="hero-badge">3-Day Live Experience</div>
                     <h1>THE CEO CREDIT CHALLENGE: BUILD YOUR 7-FIGURE ECOSYSTEM.</h1>
-                    <p style="font-size:1.2rem; color:var(--text-secondary); margin-bottom:2.5rem; max-width:540px;">
-                        Stop guessing about your credit and funding. Join Rasheda Mills for 3 days of live mentorship to
-                        repair, rebuild, and secure $100K+ in capital.
-                    </p>
-                    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-                        <button onclick="openModal()" class="btn btn-gold">Join the 3-Day Challenge</button>
-                        <a href="#about" class="btn"
-                            style="background:transparent; color:var(--bg-dark); border-color:var(--bg-dark);">Learn
-                            More First</a>
+                    <p>Stop guessing about your credit and funding. Join Rasheda Mills for 3 days of live mentorship to
+                        repair, rebuild, and secure $100K+ in capital.</p>
+                    <div class="btn-group">
+                        <button onclick="openModal()" class="btn btn-gold">Join the Challenge</button>
+                        <button onclick="openModal()" class="btn" style="background:#fff; color:#000;">Learn More
+                            First</button>
                     </div>
                 </div>
                 <div class="hero-image-wrapper">
@@ -572,114 +445,103 @@
         </div>
     </section>
 
-    <!-- Curriculum -->
-    <section id="about" class="learn-section">
+    <!-- SECTION 2: CURRICULUM -->
+    <section class="dark-section">
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">The Challenge Blueprint</h2>
-                <p class="learn-subtitle">3 Days of high-level implementation and mentorship.</p>
+                <div class="section-subtitle">3 Days of high-level implementation and mentorship.</div>
             </div>
-
             <div class="learn-grid">
-                <div class="learn-card">
-                    <span class="day-label">Day 1</span>
-                    <h3>Consumer Law & Credit Repair</h3>
+                <div class="day-card">
+                    <span class="day-num">Day 1</span>
+                    <h3>Consumer Law Mastery</h3>
                     <p>Unlock the secrets of Consumer Law to repair your credit using the Architect’s Framework.</p>
                 </div>
-                <div class="learn-card">
-                    <span class="day-label">Day 2</span>
-                    <h3>Automation & Meet Ally AI</h3>
+                <div class="day-card">
+                    <span class="day-num">Day 2</span>
+                    <h3>AI Dispute Automation</h3>
                     <p>Leverage the power of AI to automate your disputes and operational workflows for scale.</p>
                 </div>
-                <div class="learn-card">
-                    <span class="day-label">Day 3</span>
-                    <h3>$100K+ Funding & Revenue</h3>
+                <div class="day-card">
+                    <span class="day-num">Day 3</span>
+                    <h3>$100K+ Funding Logic</h3>
                     <p>Learn the exact blueprint to secure high-limit funding and create multiple income streams.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Qualification & Scarcity -->
+    <!-- SECTION 3: SCARCITY/CTA -->
     <section>
-        <div class="container">
-            <div style="text-align: center;">
-                <h2 style="font-family:var(--font-heading); font-size:2.8rem; margin-bottom:2rem; letter-spacing:-1px;">
-                    Are You Ready To Level Up?</h2>
-                <p
-                    style="color:var(--text-secondary); font-size:1.3rem; margin-bottom:4rem; max-width:700px; margin-left:auto; margin-right:auto;">
-                    This is not just another course. This is a 3-day implementation lab where you will build your
-                    business alongside Rasheda Mills.
-                </p>
-
-                <button onclick="openModal()" class="btn btn-gold"
-                    style="padding:1.8rem 4rem; font-size:1.3rem;">Request My Admission</button>
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">Are You Ready To Level Up?</h2>
+            <p style="font-size:1.2rem; color:var(--text-secondary); max-width:700px; margin: 0 auto 3rem;">
+                This is not just another course. This is a 3-day implementation lab where you will build your business
+                legacy alongside Rasheda Mills.
+            </p>
+            <button onclick="openModal()" class="btn btn-gold" style="padding:1.5rem 4rem; font-size:1.3rem;">Request My
+                Admission</button>
+            <div class="progress-container">
+                <div style="font-weight: 800; font-size: 1.5rem; margin-bottom: 1rem;">Limited Admission: 23 Slots Left
+                </div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Host Bio -->
+    <!-- SECTION 4: BIO -->
     <section class="bio-section">
         <div class="container">
             <div class="bio-grid">
-                <div class="bio-image-wrapper">
+                <div class="bio-img-frame">
                     <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c22feb427f6e625863ab88.jpg"
                         alt="Rasheda Mills" class="bio-img">
                 </div>
-                <div class="bio-content">
-                    <span class="day-label" style="margin-bottom:1rem;">Your Mentor</span>
-                    <h2 class="bio-title">Meet Rasheda Mills</h2>
-                    <div class="bio-text">
-                        <p>Rasheda Mills is the founder of Credit Remedi and the creator of Meet Ally AI. She has scaled
-                            multiple fintech businesses to 7 figures and helped over 1,300 students build their credit
-                            legacies.</p>
-                        <p>Through the 3-Day Challenge, she is opening her playbook to show you exactly how to replicate
-                            her success in the modern credit landscape.</p>
+                <div class="bio-text-area">
+                    <div class="bio-header">
+                        <span class="day-num" style="margin-bottom:1rem; display:block;">Your Mentor</span>
+                        <h2 class="section-title" style="text-align:left; font-size:3.5rem;">Meet Rasheda Mills</h2>
                     </div>
-                    <button onclick="openModal()" class="btn bio-btn">Work With Rasheda</button>
+                    <div
+                        style="display:flex; flex-direction:column; gap:1.5rem; font-size:1.15rem; color:var(--text-secondary);">
+                        <p>Rasheda Mills is the founder of Credit Remedi and the creator of Meet Ally AI. She has scaled
+                            multiple fintech businesses to 7 figures and helped over 1,300 students.</p>
+                        <p>Through the 3-Day Challenge, she is opening her playbook to show you exactly how to replicate
+                            her success.</p>
+                        <button onclick="openModal()" class="btn bio-btn"
+                            style="margin-top:1rem; width:fit-content;">Work With Rasheda</button>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Quiz Modal -->
-    <div id="quizModal" class="modal-overlay" onclick="closeModal(event)">
+    <!-- MODAL -->
+    <div id="quizModal" class="modal-overlay" onclick="closeModal()">
         <div class="modal-content" onclick="event.stopPropagation()">
             <span class="modal-close" onclick="closeModal()">&times;</span>
-            <h3 style="font-family:var(--font-heading); font-size:2.5rem; font-weight:800; margin-bottom:1rem;">
-                Pre-Challenge Qualification</h3>
-            <p style="color:var(--text-secondary); margin-bottom:3rem; font-size:1.1rem;">To ensure you get the most out
-                of the 3-day experience, please tell us about your current status and goals.</p>
-            <div style="width:100%; text-align:center;">
-                <iframe src="https://api.leadconnectorhq.com/widget/survey/kBn3xPZ4NhVa2kYjwdBq"
-                    style="border:none; width:100%; min-height:550px;" scrolling="no" id="kBn3xPZ4NhVa2kYjwdBq"
-                    title="survey"></iframe>
-                <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
-            </div>
+            <h2 style="font-family:var(--font-heading); margin-bottom:1rem;">Pre-Challenge Qualification</h2>
+            <p style="margin-bottom:2rem; color:var(--text-secondary);">Apply to ensure you get the most out of the
+                experience.</p>
+            <iframe src="https://api.leadconnectorhq.com/widget/survey/kBn3xPZ4NhVa2kYjwdBq"
+                style="border:none; width:100%; min-height:500px;" scrolling="no" id="ghl-survey"></iframe>
+            <script src="https://link.msgsndr.com/js/form_embed.js" defer></script>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div
-                style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 2rem;">
-                <div>
-                    <div
-                        style="font-family:var(--font-heading); font-weight:800; font-size:1.8rem; margin-bottom:1rem;">
-                        Rasheda Mills</div>
-                    <p style="color:rgba(255,255,255,0.6); font-size:0.95rem;">Credit Architect | Fintech Founder |
-                        Speaker</p>
-                </div>
-                <div style="display: flex; flex-direction: column; align-items: flex-end; gap: 1rem;">
-                    <div style="display: flex; gap: 2rem;">
-                        <a href="#" style="color:var(--accent-gold); text-decoration:none; font-weight:600;">Privacy
-                            Policy</a>
-                        <a href="#" style="color:var(--accent-gold); text-decoration:none; font-weight:600;">Terms &
-                            Conditions</a>
-                    </div>
-                    <p style="color:rgba(255,255,255,0.3); font-size:0.85rem;">&copy; 2026 Rasheda Mills. All rights
-                        reserved.</p>
-                </div>
+    <footer class="dark-section" style="padding:60px 0; min-height:auto;">
+        <div class="container"
+            style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:2rem;">
+            <div>
+                <div style="font-family:var(--font-heading); font-size:1.5rem; font-weight:800;">Rasheda Mills</div>
+                <p style="opacity:0.6;">Credit Architect | Fintech Founder</p>
+            </div>
+            <div style="display:flex; gap:2rem; font-size:0.9rem;">
+                <a href="#" style="color:var(--accent-gold); text-decoration:none;">Privacy Policy</a>
+                <a href="#" style="color:var(--accent-gold); text-decoration:none;">Terms & Conditions</a>
             </div>
         </div>
     </footer>
