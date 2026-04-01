@@ -128,24 +128,52 @@
 
             .bio-image-wrapper {
                 box-shadow: 12px 12px 0 var(--accent-gold);
-                max-width: 250px;
-                margin: 0 auto;
+                max-width: 280px;
+                margin: 2rem auto;
+                order: 2;
+                /* Move image below header */
+            }
+
+            .bio-grid {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                gap: 0;
             }
 
             .bio-content {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                order: 1;
+                /* Header at the top */
+                width: 100%;
+            }
+
+            .bio-text-wrapper {
+                order: 3;
+                /* Text below image */
+                width: 100%;
+                text-align: center;
             }
 
             .bio-title {
-                font-size: 2rem;
-                margin-top: 1.5rem;
+                font-size: 2.2rem;
+                margin-top: 0;
+                text-align: center;
+                width: 100%;
             }
 
             .bio-text {
                 font-size: 1rem;
                 line-height: 1.6;
+                text-align: center;
+            }
+
+            .bio-btn {
+                order: 4;
+                margin-top: 2rem;
             }
 
             .navbar .container {
@@ -598,7 +626,7 @@
                     <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c22feb427f6e625863ab88.jpg"
                         alt="Rasheda Mills" class="bio-img">
                 </div>
-                <div>
+                <div class="bio-content">
                     <span class="day-label" style="margin-bottom:1rem;">Your Mentor</span>
                     <h2 class="bio-title">Meet Rasheda Mills</h2>
                     <div class="bio-text">
@@ -608,7 +636,7 @@
                         <p>Through the 3-Day Challenge, she is opening her playbook to show you exactly how to replicate
                             her success in the modern credit landscape.</p>
                     </div>
-                    <button onclick="openModal()" class="btn" style="margin-top:3rem;">Work With Rasheda</button>
+                    <button onclick="openModal()" class="btn bio-btn">Work With Rasheda</button>
                 </div>
             </div>
         </div>
