@@ -52,7 +52,8 @@
             align-items: center;
             justify-content: center;
             position: relative;
-            padding: 60px 0;
+            padding: 100px 0;
+            box-sizing: border-box;
         }
 
         .container {
@@ -338,8 +339,8 @@
 
         @media (max-width: 768px) {
             section {
-                min-height: auto;
-                padding: 100px 0;
+                min-height: 100vh;
+                padding: 80px 0;
             }
 
             .hero-section {
@@ -355,22 +356,26 @@
 
             .hero-image-wrapper {
                 justify-content: center;
-                max-height: 45vh;
-                margin-top: 2rem;
+                max-height: 40vh;
+                margin-top: 1rem;
             }
 
             .hero-content h1 {
-                font-size: 2.5rem;
+                font-size: 2.2rem;
                 letter-spacing: -1px;
             }
 
             .learn-grid {
                 grid-template-columns: 1fr;
-                gap: 1.5rem;
+                gap: 1rem;
             }
 
             .learn-card {
-                padding: 1.5rem;
+                padding: 1.2rem;
+            }
+
+            .learn-card h3 {
+                font-size: 1.1rem;
             }
 
             .modal-content {
@@ -384,8 +389,6 @@
             .navbar .btn {
                 display: none;
             }
-
-            /* Hide heavy CTA on small mobile nav */
         }
     </style>
 </head>
