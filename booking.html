@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualified | Book Your Strategy Call</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --bg-primary: #ffffff;
+            --bg-dark: #0a0a0a;
+            --accent-gold: #c5a059;
+            --text-secondary: #4a4a4a;
+            --font-heading: 'Outfit', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: #000;
+            background-color: var(--bg-primary);
+            line-height: 1.6;
+            padding: 60px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: 3.5rem;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            color: var(--bg-dark);
+            text-transform: uppercase;
+        }
+
+        .highlight {
+            color: var(--accent-gold);
+        }
+
+        .subtitle {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+
+        .calendar-container {
+            background: #fff;
+            border: 2px solid var(--accent-gold);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+            margin-bottom: 4rem;
+        }
+
+        .calendar-header {
+            background: var(--bg-dark);
+            color: #fff;
+            padding: 20px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: var(--bg-dark);
+            color: #fff;
+            padding: 1.2rem 2.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        .btn:hover {
+            background: var(--accent-gold);
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div style="font-size: 4rem; margin-bottom: 1rem;">🏆</div>
+        <h1>You're <span class="highlight">Qualified!</span></h1>
+        <p class="subtitle">Based on your answers, you are eligible for a priority 1-on-1 strategy call to fast-track
+            your 7-figure credit ecosystem plan.</p>
+
+        <div class="calendar-container">
+            <div class="calendar-header">Select a time for your priority call Below</div>
+            <!-- GHL CALENDAR IFRAME -->
+            <!-- REPLACE THE SRC BELOW WITH YOUR GHL CALENDAR LINK -->
+            <iframe src="https://api.leadconnectorhq.com/widget/booking/S6PzT94u8XpM30H0jA8b"
+                style="width: 100%; border:none; overflow: hidden; min-height: 800px;" scrolling="no"
+                id="calendar-iframe"></iframe>
+        </div>
+
+        <div style="margin-top: 4rem;">
+            <p style="opacity: 0.5; font-size: 0.9rem; margin-bottom: 2rem;">If you can't find a time that works, please
+                email booking@joincreditceosociety.com</p>
+            <a href="https://joincreditceosociety.com/home" class="btn">Return to Dashboard</a>
+        </div>
+
+        <div style="margin-top: 5rem; font-family: var(--font-heading); opacity: 0.2; font-weight: 800;">Rasheda Mills
+        </div>
+    </div>
+
+</body>
+
+</html>
