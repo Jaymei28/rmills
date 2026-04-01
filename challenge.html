@@ -27,6 +27,153 @@
             --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
 
+        @media (max-width: 768px) {
+            section {
+                min-height: 100vh;
+                padding: 120px 20px;
+            }
+
+            .hero-section {
+                padding-top: 100px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-start;
+            }
+
+            .hero-grid,
+            .bio-grid {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                gap: 2.5rem;
+                align-items: center;
+            }
+
+            .hero-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .hero-content h1 {
+                font-size: 2.1rem;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                letter-spacing: -1.5px;
+            }
+
+            .hero-badge {
+                font-size: 0.7rem;
+                padding: 0.4rem 0.8rem;
+                margin-bottom: 1.2rem;
+            }
+
+            .hero-image-wrapper {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                height: auto;
+                max-height: 40vh;
+                overflow: hidden;
+                margin-top: 1rem;
+                position: relative;
+                z-index: 10;
+            }
+
+            .hero-img {
+                width: 100%;
+                max-width: 280px;
+                border-radius: 12px;
+                box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            }
+
+            .btn {
+                width: 100%;
+                max-width: 320px;
+                font-size: 1rem;
+                padding: 1.1rem 2rem;
+                margin: 0 auto;
+                box-sizing: border-box;
+            }
+
+            .btn+.btn {
+                margin-top: 1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 0.5rem;
+            }
+
+            .learn-subtitle {
+                font-size: 1.1rem;
+                margin-bottom: 2.5rem;
+            }
+
+            .learn-grid {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+                width: 100%;
+                pointer-events: none;
+            }
+
+            .learn-card {
+                padding: 1.8rem 1.5rem;
+                border-radius: 12px;
+                background: rgba(255, 255, 255, 0.05);
+            }
+
+            .learn-card h3 {
+                font-size: 1.15rem;
+            }
+
+            .seats-label {
+                font-size: 1.5rem;
+            }
+
+            .progress-bar-container {
+                height: 10px;
+            }
+
+            .bio-image-wrapper {
+                box-shadow: 12px 12px 0 var(--accent-gold);
+                max-width: 250px;
+                margin: 0 auto;
+            }
+
+            .bio-content {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .bio-title {
+                font-size: 2rem;
+                margin-top: 1.5rem;
+            }
+
+            .bio-text {
+                font-size: 1rem;
+                line-height: 1.6;
+            }
+
+            .navbar .container {
+                justify-content: center;
+            }
+
+            .navbar .btn {
+                display: none;
+            }
+
+            .hero-content div[style*="display: flex"] {
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+            }
+        }
+
         * {
             margin: 0;
             padding: 0;
