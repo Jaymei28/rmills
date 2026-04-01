@@ -62,25 +62,6 @@
             width: 100%;
         }
 
-        /* Branding: Top Info Bar */
-        .info-bar {
-            background-color: var(--bg-dark);
-            color: var(--accent-gold);
-            padding: 12px 0;
-            text-align: center;
-            font-family: var(--font-heading);
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            border-bottom: 1px solid var(--accent-gold);
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 1002;
-        }
-
         /* Navbar */
         .navbar {
             height: 80px;
@@ -90,7 +71,7 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             position: fixed;
-            top: 45px;
+            top: 0;
             left: 0;
             width: 100%;
             z-index: 1001;
@@ -113,7 +94,7 @@
 
         /* Hero */
         .hero-section {
-            padding-top: 140px;
+            padding-top: 100px;
             background: radial-gradient(circle at top right, #fdfbf7 0%, #ffffff 100%);
         }
 
@@ -355,32 +336,61 @@
             border-top: 5px solid var(--accent-gold);
         }
 
-        @media (max-width: 1024px) {
+        @media (max-width: 768px) {
+            section {
+                min-height: auto;
+                padding: 100px 0;
+            }
+
+            .hero-section {
+                padding-top: 120px;
+            }
 
             .hero-grid,
             .bio-grid {
                 grid-template-columns: 1fr;
                 text-align: center;
+                gap: 3rem;
             }
 
             .hero-image-wrapper {
                 justify-content: center;
-                max-height: 40vh;
-                margin-top: 3rem;
+                max-height: 45vh;
+                margin-top: 2rem;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+                letter-spacing: -1px;
             }
 
             .learn-grid {
                 grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
+
+            .learn-card {
+                padding: 1.5rem;
+            }
+
+            .modal-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .modal-content h3 {
+                font-size: 1.8rem;
+            }
+
+            .navbar .btn {
+                display: none;
+            }
+
+            /* Hide heavy CTA on small mobile nav */
         }
     </style>
 </head>
 
 <body>
-
-    <div class="info-bar">
-        🕒 THE 3-DAY CEO CREDIT CHALLENGE | MARCH 12-14 | LIVE TRAINING
-    </div>
 
     <nav class="navbar">
         <div class="container">
@@ -463,13 +473,6 @@
 
                 <button onclick="openModal()" class="btn btn-gold"
                     style="padding:1.8rem 4rem; font-size:1.3rem;">Request My Admission</button>
-
-                <div class="seats-block">
-                    <div class="seats-label">Only 23 Admission Slots Available</div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill"></div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>
