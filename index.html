@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rasheda Mills | Credit Architect and Fintech Founder</title>
+    <title>Rasheda Mills | Financial Strategy Specialist and Business Consultant</title>
     <meta name="description"
-        content="Rasheda Mills is the founder of Credit Remedi and creator of Meet Ally, an AI powered credit assistant helping consumers repair their credit and helping entrepreneurs build profitable credit businesses.">
+        content="Rasheda Mills is a financial education specialist and business consultant, creator of Meet Ally, an AI powered financial literacy assistant helping consumers improve their financial standing and helping entrepreneurs build profitable consulting businesses.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -21,9 +21,14 @@
             --text-secondary: #4a4a4a;
             --text-muted: #8a8a8a;
             --text-light: #ffffff;
-            --accent: #1a1a1a;
+            --accent: #d4a843;
+            /* Deep Turquoise */
+            --gold: #d4a843;
+            /* Rich Gold */
+            --gold-light: #f5d6a7;
+            --gold-gradient: linear-gradient(135deg, #d4a843 0%, #a07830 100%);
             --border: rgba(0, 0, 0, 0.08);
-            --border-light: rgba(255, 255, 255, 0.1);
+            --border-light: rgba(0, 0, 0, 0.05);
             --container-width: 1200px;
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
@@ -51,7 +56,7 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: var(--bg-dark);
+            background: var(--gold);
             border: 3px solid var(--bg-primary);
             border-radius: 100px;
         }
@@ -113,10 +118,11 @@
             height: 80px;
             display: flex;
             align-items: center;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid var(--border);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
         }
 
         .navbar .container {
@@ -127,10 +133,15 @@
         }
 
         .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 800;
-            letter-spacing: -1px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 60px;
+            /* Adjusting for correct brand dominance */
+            width: auto;
+            display: block;
         }
 
         .nav-links {
@@ -146,20 +157,20 @@
         }
 
         .nav-links a:hover {
-            color: var(--text-primary);
+            color: var(--accent);
         }
 
         .nav-cta {
-            background: var(--bg-dark);
-            color: var(--text-light) !important;
+            background: var(--gold);
+            color: #ffffff !important;
             padding: 0.8rem 1.5rem;
             border-radius: 4px;
-            font-weight: 600 !important;
+            font-weight: 700 !important;
         }
 
         .nav-cta:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 20px rgba(212, 168, 67, 0.3);
         }
 
         .mobile-menu-toggle {
@@ -176,7 +187,7 @@
             display: block;
             width: 24px;
             height: 2px;
-            background: var(--bg-dark);
+            background: var(--text-primary);
             margin: 5px 0;
             transition: var(--transition);
         }
@@ -192,6 +203,83 @@
         .mobile-menu-toggle.active span:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
+
+        /* SMART Video Modal for both Landscape and Portrait */
+        .video-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .video-modal-content {
+            width: 95%;
+            max-width: 1200px;
+            height: 90vh;
+            /* Scalable container */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            transform: scale(0.95);
+            transition: transform 0.3s ease;
+        }
+
+        .video-modal.active .video-modal-content {
+            transform: scale(1);
+        }
+
+        .video-modal-content video {
+            max-width: 100%;
+            max-height: 100%;
+            /* Automatically scales both portrait and landscape */
+            border-radius: 12px;
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.5);
+            display: block;
+            margin: auto;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            line-height: 1;
+        }
+
+        /* Force Landscape Aspect Ratio for Thumbnails */
+        .video-placeholder {
+            aspect-ratio: 16/9 !important;
+            background: var(--bg-dark);
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            .close-modal {
+                top: -50px;
+                right: 0;
+            }
+        }
+
 
         /* Sections */
         section {
@@ -256,15 +344,17 @@
 
         .badge {
             display: inline-block;
-            padding: 0.5rem 1rem;
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
+            padding: 0.5rem 1.5rem;
+            background: rgba(230, 185, 128, 0.1);
+            border: 1px solid var(--gold);
             border-radius: 100px;
             font-size: 0.8rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             margin-bottom: 2rem;
+            color: var(--gold);
+            box-shadow: 0 0 20px rgba(230, 185, 128, 0.1);
         }
 
         .hero-section h1 {
@@ -354,14 +444,14 @@
         }
 
         .btn-primary {
-            background: var(--bg-dark);
-            color: var(--text-light);
+            background: var(--gold);
+            color: #000;
             border: none;
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 20px 40px rgba(230, 185, 128, 0.3);
         }
 
         .btn-secondary {
@@ -372,6 +462,7 @@
 
         .btn-secondary:hover {
             background: var(--bg-secondary);
+            border-color: var(--gold);
         }
 
         .btn-text {
@@ -403,8 +494,8 @@
             position: absolute;
             bottom: -30px;
             left: -30px;
-            background: var(--bg-dark);
-            color: var(--text-light);
+            background: var(--gold);
+            color: #000;
             padding: 2rem;
             border-radius: 12px;
             display: flex;
@@ -557,13 +648,24 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 60px;
-            height: 60px;
+            width: 70px;
+            height: 70px;
             background: var(--bg-primary);
+            border: 2px solid var(--gold);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
+            z-index: 2;
+            pointer-events: none;
+            box-shadow: 0 0 30px rgba(230, 185, 128, 0.4);
+            transition: var(--transition);
+        }
+
+        .video-placeholder:hover .play-btn {
+            transform: translate(-50%, -50%) scale(1.1);
+            background: var(--gold);
+            box-shadow: 0 0 50px rgba(230, 185, 128, 0.6);
         }
 
         .play-btn::after {
@@ -572,9 +674,14 @@
             width: 0;
             height: 0;
             border-style: solid;
-            border-width: 10px 0 10px 18px;
-            border-color: transparent transparent transparent var(--bg-dark);
-            margin-left: 4px;
+            border-width: 12px 0 12px 20px;
+            border-color: transparent transparent transparent var(--gold);
+            margin-left: 6px;
+            transition: var(--transition);
+        }
+
+        .video-placeholder:hover .play-btn::after {
+            border-color: transparent transparent transparent #000000;
         }
 
         /* Work Options */
@@ -614,17 +721,20 @@
         }
 
         .work-option:hover {
-            background: var(--bg-dark);
+            background: #000000;
+            border-color: var(--gold);
+            box-shadow: 0 20px 50px rgba(230, 185, 128, 0.1);
         }
 
         .work-option:hover h3,
         .work-option:hover span:first-child {
-            color: var(--text-light);
+            color: var(--gold-light);
         }
 
         .work-option:hover .arrow {
             opacity: 1;
-            color: var(--text-light);
+            color: var(--gold);
+            transform: translateX(10px);
         }
 
         /* Media Section */
@@ -828,10 +938,15 @@
 
         .stat-num {
             display: block;
-            font-size: 4rem;
+            font-size: 4.5rem;
             font-family: var(--font-heading);
             font-weight: 800;
             margin-bottom: 0.5rem;
+            background: var(--gold-gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 5px 15px rgba(230, 185, 128, 0.2));
         }
 
         .stat-label {
@@ -844,39 +959,56 @@
 
         .testimonials-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 2rem;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 1.5rem;
             margin-top: 5rem;
-            max-width: 900px;
+            max-width: 1200px;
             margin-left: auto;
             margin-right: auto;
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .testimonials-grid {
-                grid-template-columns: 1fr;
-                margin-top: 3rem;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 1.5rem;
             }
         }
 
-        .testimonial-card {
-            background: var(--bg-primary);
-            padding: 2.5rem;
+        @media (max-width: 768px) {
+            .testimonials-grid {
+                grid-template-columns: repeat(2, 1fr);
+                margin-top: 3rem;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .testimonial-image {
             border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
             border: 1px solid var(--border);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            height: 100%;
         }
 
-        .testimonial-card p {
-            font-size: 1.1rem;
-            font-style: italic;
-            color: var(--text-secondary);
-            margin-bottom: 1.5rem;
+        .testimonial-image:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(212, 168, 67, 0.2);
+            border-color: var(--gold);
         }
 
-        .testimonial-author {
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--text-primary);
+        .testimonial-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 4/5;
+            display: block;
         }
 
         /* Newsletter Section */
@@ -898,7 +1030,9 @@
         .newsletter-form {
             display: flex;
             gap: 1rem;
-            width: 60%;
+            width: 100%;
+            max-width: 800px;
+            align-items: stretch;
         }
 
         .newsletter-form input {
@@ -906,6 +1040,17 @@
             padding: 1.2rem;
             border: 1px solid var(--border);
             border-radius: 4px;
+            font-size: 1rem;
+            line-height: normal;
+        }
+
+        .newsletter-form .btn {
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0 2rem;
+            font-size: 1rem;
         }
 
         .btn-dark {
@@ -947,8 +1092,8 @@
 
         /* Footer */
         .footer {
-            padding: 80px 0 40px;
-            border-top: 1px solid var(--border);
+            padding: 50px 0 30px;
+            border-top: none;
         }
 
         .footer-grid {
@@ -958,10 +1103,13 @@
         }
 
         .footer-logo {
-            font-family: var(--font-heading);
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-logo img {
+            height: 80px;
+            width: auto;
+            display: block;
         }
 
         .footer-nav {
@@ -1215,7 +1363,10 @@
         <!-- Navigation -->
         <nav class="navbar">
             <div class="container">
-                <a href="#" class="logo">RM</a>
+                <a href="#" class="logo">
+                    <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d505d0ebf1a60843fa0712.png"
+                        alt="Rasheda Mills Logo">
+                </a>
                 <div class="nav-links">
                     <a href="#about">About</a>
                     <a href="#ecosystem">Ecosystem</a>
@@ -1235,16 +1386,16 @@
             <div class="container">
                 <div class="hero-grid">
                     <div class="hero-content">
-                        <div class="badge fade-in">Fintech Founder | Credit Architect</div>
+                        <div class="badge fade-in">Business Consultant | Financial Strategy Specialist</div>
                         <h1 class="fade-in">Rasheda Mills</h1>
-                        <p class="subtitle fade-in">Credit Architect | Fintech Founder | Speaker</p>
-                        <p class="hero-description fade-in">Founder of Credit Remedi and creator of Meet Ally, an AI
-                            powered credit assistant helping consumers repair their credit and helping entrepreneurs
-                            build profitable credit businesses.</p>
+                        <p class="subtitle fade-in">Financial Strategy Specialist | Business Consultant | Speaker</p>
+                        <p class="hero-description fade-in">Founder of Rasheda Mills Education and creator of Meet Ally, an AI
+                            powered financial literacy assistant helping consumers improve their financial health and helping entrepreneurs
+                            build profitable consulting businesses.</p>
                         <div class="authority-line fade-in">
-                            <span>Founder of Credit Remedi</span>
+                            <span>Financial Education Specialist</span>
                             <span class="dot"></span>
-                            <span>Creator of Meet Ally AI</span>
+                            <span>Business Strategy Consultant</span>
                         </div>
                         <div class="hero-btns fade-in">
                             <a href="#ecosystem" class="btn btn-primary">Explore the Ecosystem</a>
@@ -1308,9 +1459,22 @@
                 font-family: 'Outfit', sans-serif !important;
                 font-size: clamp(2.5rem, 5vw, 3.5rem) !important;
                 font-weight: 800 !important;
-                margin-bottom: 2rem !important;
+                margin-bottom: 2.5rem !important;
                 letter-spacing: -2px !important;
                 color: #0a0a0a !important;
+                position: relative !important;
+            }
+
+            .ghl-custom-about .section-title::after {
+                content: '' !important;
+                position: absolute !important;
+                bottom: -15px !important;
+                left: 0 !important;
+                width: 80px !important;
+                height: 4px !important;
+                background: var(--gold-gradient) !important;
+                border-radius: 10px !important;
+                box-shadow: 0 0 15px rgba(230, 185, 128, 0.5) !important;
             }
 
             .ghl-custom-about .about-text {
@@ -1360,22 +1524,22 @@
                     <div>
                         <h2 class="section-title">Meet Rasheda</h2>
                         <div class="about-text">
-                            <p>Rasheda Mills is a fintech founder and credit strategist with more than sixteen years of
+                            <p>Rasheda Mills is a financial strategy specialist and business consultant with more than sixteen years of
                                 entrepreneurial experience.</p>
 
                             <div class="about-block">
-                                <p>As the founder of Credit Remedi she developed systems designed to help consumers
-                                    repair their credit and position themselves for real funding opportunities.</p>
+                                <p>As a business consultant, she developed systems designed to help consumers
+                                    improve their financial health and position themselves for real business opportunities.</p>
                             </div>
 
                             <div class="about-block">
-                                <p>She is also the creator of Meet Ally, an AI powered credit assistant built to
-                                    simplify credit education, dispute strategies, and financial literacy.</p>
+                                <p>She is also the creator of Meet Ally, an AI powered financial literacy assistant built to
+                                    simplify financial education, business strategies, and financial literacy.</p>
                             </div>
 
                             <p>Through her ecosystem of services, software, and education platforms, Rasheda helps
-                                individuals improve their credit profiles while also teaching entrepreneurs how to build
-                                profitable credit businesses.</p>
+                                individuals improve their financial health while also teaching entrepreneurs how to build
+                                profitable consulting businesses.</p>
                         </div>
                     </div>
                 </div>
@@ -1389,7 +1553,7 @@
                 align-items: center !important;
                 justify-content: center !important;
                 position: relative !important;
-                background-color: #f8f9fa !important;
+                background-color: #ffffff !important;
                 min-height: 100vh !important;
                 width: 100vw !important;
                 /* Force browser width */
@@ -1444,6 +1608,8 @@
                 transition: all 0.4s ease !important;
                 display: flex !important;
                 flex-direction: column !important;
+                position: relative !important;
+                overflow: hidden !important;
             }
 
             /* No transform here - card stays still */
@@ -1509,72 +1675,93 @@
 
         <section id="ecosystem" class="ghl-custom-ecosystem">
             <div class="container">
-                <h2 class="section-title">The Credit Architect Ecosystem</h2>
-                <p class="section-intro">Through Credit Remedi and Meet Ally, Rasheda Mills has created an ecosystem
-                    designed to help consumers repair their credit.</p>
+                <h2 class="section-title">The Financial Strategy Ecosystem</h2>
+                <p class="section-intro">Through Rasheda Mills Education and Meet Ally, an ecosystem has been created
+                    designed to help consumers improve their financial literacy.</p>
                 <div class="ecosystem-grid">
                     <div class="eco-card">
-                        <h3>Credit Remedi</h3>
-                        <p>Credit repair and funding positioning services designed to help consumers correct reporting.
+                        <h3>Financial Education</h3>
+                        <p>Financial management and business strategy services designed to help consumers improve their financial health.
                         </p>
-                        <a href="https://remedicredit.com/" target="_blank" class="card-btn">Fix Your Credit <span
+                        <a href="#" target="_blank" class="card-btn">Financial Education <span
                                 style="transition:0.3s;">&rarr;</span></a>
                     </div>
                     <div class="eco-card">
                         <h3>Meet Ally</h3>
-                        <p>An AI powered credit assistant designed to simplify credit education and financial literacy.
+                        <p>An AI powered financial literacy assistant designed to simplify financial education and literacy.
                         </p>
-                        <a href="https://remedicredit.com/" target="_blank" class="card-btn">Meet Ally <span
+                        <a href="#" target="_blank" class="card-btn">Meet Ally <span
                                 style="transition:0.3s;">&rarr;</span></a>
                     </div>
                     <div class="eco-card">
-                        <h3>Mentorship</h3>
-                        <p>Training designed to help entrepreneurs start and scale profitable credit businesses.</p>
+                        <h3>Business Consulting</h3>
+                        <p>Training designed to help entrepreneurs start and scale profitable consulting businesses.</p>
                         <a href="./challenge.html" class="card-btn">Join Challenge <span
                                 style="transition:0.3s;">&rarr;</span></a>
                     </div>
                     <div class="eco-card">
-                        <h3>Credit Community</h3>
-                        <p>A community focused on credit education, live credit audits, and accountability.</p>
+                        <h3>Financial Community</h3>
+                        <p>A community focused on financial education, live financial audits, and accountability.</p>
                         <a href="#" class="card-btn">Join Community <span style="transition:0.3s;">&rarr;</span></a>
                     </div>
                 </div>
             </div>
         </section>
 
+
         <!-- Section 4: Featured Content -->
         <section id="featured" class="featured-section">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Watch and Learn</h2>
-                    <p class="section-description">Explore credit education, business strategy, and insights on building
-                        systems that work.</p>
+                    <p class="section-description">Explore financial education, business strategy, and insights on building
+                        sustainable income streams.</p>
                 </div>
                 <div class="video-grid">
                     <div class="video-item">
-                        <div class="video-placeholder">
-                            <img src="./assets/video-thumb-1.jpg" alt="Video Content">
+                        <div class="video-placeholder"
+                            data-video="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d11b31fa2dde97421ccfa5.mp4">
+                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d4fbb9a64a04ba15a8316a.png"
+                                alt="Financial Systems">
                             <div class="play-btn"></div>
                         </div>
-                        <h3>Credit Mastery 101</h3>
+                        <h3>Financial Systems</h3>
                     </div>
                     <div class="video-item">
-                        <div class="video-placeholder">
-                            <img src="./assets/video-thumb-2.jpg" alt="Video Content">
+                        <div class="video-placeholder"
+                            data-video="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d11b314cde4bbc2aa1b48c.mp4">
+                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d5006889b433b45a9d37af.png"
+                                alt="Access to Funding">
                             <div class="play-btn"></div>
                         </div>
-                        <h3>Building an AI Credit Business</h3>
+                        <h3>Access to Funding</h3>
                     </div>
                     <div class="video-item">
-                        <div class="video-placeholder">
-                            <img src="./assets/video-thumb-3.jpg" alt="Video Content">
+                        <div class="video-placeholder"
+                            data-video="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d4f5ac820ad79cccf7da33.mp4">
+                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d4ff7be2451fbe28246507.png"
+                                alt="3-Day Challenge">
                             <div class="play-btn"></div>
                         </div>
-                        <h3>The Future of Credit Tech</h3>
+                        <h3>3-Day Challenge</h3>
                     </div>
                 </div>
             </div>
         </section>
+
+
+        <!-- Add this Modal at the very end of your HTML block -->
+        <div class="video-modal" id="videoModal">
+            <div class="video-modal-content">
+                <span class="close-modal">&times;</span>
+                <video id="modalVideo" controls>
+                    <source src="" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+
+
 
         <!-- Section 5: Ways to Work With Rasheda -->
         <section id="work-with-me" class="work-section luxury-bg">
@@ -1583,21 +1770,25 @@
                     <h2 class="section-title">Ways to Work With Me</h2>
                 </div>
                 <div class="work-options-grid">
-                    <a href="#" class="work-option">
-                        <h3>Fix Your Credit With My Team</h3>
-                        <span class="arrow">&rarr;</span>
+                    <a href="#" target="_blank" class="work-option">
+                        <span>Direct Support</span>
+                        <h3>Improve Your Financial Standing</h3>
+                        <div class="arrow">&rarr;</div>
                     </a>
                     <a href="./challenge.html" class="work-option">
-                        <h3>Start a Credit Business</h3>
-                        <span class="arrow">&rarr;</span>
+                        <span>Consulting</span>
+                        <h3>Start a Consulting Business</h3>
+                        <div class="arrow">&rarr;</div>
                     </a>
                     <a href="#" class="work-option">
-                        <h3>Join the Credit Community</h3>
-                        <span class="arrow">&rarr;</span>
+                        <span>Networking</span>
+                        <h3>Join the Financial Community</h3>
+                        <div class="arrow">&rarr;</div>
                     </a>
-                    <a href="#" class="work-option">
+                    <a href="#contact" class="work-option">
+                        <span>Speaking</span>
                         <h3>Speaking and Partnerships</h3>
-                        <span class="arrow">&rarr;</span>
+                        <div class="arrow">&rarr;</div>
                     </a>
                 </div>
             </div>
@@ -1609,12 +1800,12 @@
                 <div class="media-header">
                     <div class="media-title-group">
                         <h2 class="section-title">Media and Speaking</h2>
-                        <p class="media-intro">Rasheda Mills is a fintech founder and credit strategist known for
-                            building systems that help consumers repair their credit and position themselves for
-                            stronger financial opportunities.</p>
-                        <p>As the founder of Credit Remedi and creator of Meet Ally, she speaks on credit systems,
-                            financial literacy, entrepreneurship, and building technology solutions in the credit
-                            industry.</p>
+                        <p class="media-intro">Rasheda Mills is a business consultant and financial strategy specialist known for
+                            building systems that help consumers improve their financial health and position themselves for
+                            stronger economic opportunities.</p>
+                        <p>As a leading educator and creator of Meet Ally, she speaks on financial systems,
+                            financial literacy, entrepreneurship, and building technology solutions in the business
+                            education sector.</p>
                     </div>
                 </div>
 
@@ -1622,12 +1813,11 @@
                     <div class="media-topics">
                         <h3>Topics Rasheda Speaks On</h3>
                         <ul class="topics-list">
-                            <li>Building a profitable credit business</li>
-                            <li>Understanding how credit systems work</li>
-                            <li>Credit repair strategies and financial positioning</li>
-                            <li>Financial literacy and consumer empowerment</li>
-                            <li>Entrepreneurship and building scalable systems</li>
-                            <li>The future of credit technology and AI in finance</li>
+                            <li>Building a profitable consulting business</li>
+                            <li>Understanding how financial systems work</li>
+                            <li>Financial education strategies and business positioning</li>
+                            <li>Personal branding for consultants</li>
+                            <li>The future of financial technology and AI in business</li>
                         </ul>
                     </div>
                     <div class="media-available">
@@ -1643,23 +1833,6 @@
                     </div>
                 </div>
 
-                <div class="media-featured">
-                    <h3>Featured Appearances</h3>
-                    <div class="featured-grid">
-                        <div class="featured-item large">
-                            <img src="./assets/media-1.jpg" alt="Appearance">
-                            <div class="featured-label">Keynote: The Future of Fintech</div>
-                        </div>
-                        <div class="featured-item">
-                            <img src="./assets/media-2.jpg" alt="Appearance">
-                            <div class="featured-label">Podcast: Credit Strategies</div>
-                        </div>
-                        <div class="featured-item">
-                            <img src="./assets/media-3.jpg" alt="Appearance">
-                            <div class="featured-label">Panel: AI in Finance</div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Rasheda Mills Section 8: Booking and Inquiries -->
                 <style>
@@ -1733,9 +1906,10 @@
 
                     /* Right Column: Form */
                     .ghl-custom-booking .form-wrapper {
-                        background: transparent !important;
-                        padding: 0 !important;
-                        border: none !important;
+                        background: #f8f9fa !important;
+                        padding: 2rem !important;
+                        border-radius: 12px !important;
+                        border: 1px solid rgba(0, 0, 0, 0.08) !important;
                     }
 
                     @media (max-width: 1024px) {
@@ -1797,70 +1971,53 @@
             <div class="container">
                 <div class="section-header center">
                     <h2 class="section-title">Trusted by Thousands</h2>
-                    <p class="trust-copy">Through Credit Remedi thousands of consumers have received guidance on
-                        correcting their credit reports and positioning themselves for stronger financial opportunities.
+                    <p class="trust-copy">Through Rasheda Mills Education, thousands of consumers have received guidance on
+                        managing their financial profiles and positioning themselves for stronger financial opportunities.
                     </p>
                 </div>
-                <div class="trust-stats">
-                    <div class="stat-item">
-                        <span class="stat-num">10k+</span>
-                        <span class="stat-label">Clients Served</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">16+</span>
-                        <span class="stat-label">Years Experience</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">95%</span>
-                        <span class="stat-label">Success Rate</span>
-                    </div>
-                </div>
                 <div class="testimonials-grid">
-                    <div class="testimonial-card">
-                        <p>"Rasheda's systems completely transformed my understanding of credit. I went from denied to
-                            funded in 6 months."</p>
-                        <div class="testimonial-author">- Sarah J., Entrepreneur</div>
+                    <div class="testimonial-image">
+                        <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/6952bf33d2e1fcff126491c4.png"
+                            alt="Client Testimonial 1">
                     </div>
-                    <div class="testimonial-card">
-                        <p>"Meet Ally is a game changer for my business. The AI insights saved me hundreds of hours."
-                        </p>
-                        <div class="testimonial-author">- Marcus T., Credit Strategist</div>
+                    <div class="testimonial-image">
+                        <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/6952bf332bb72cdc4642325a.png"
+                            alt="Client Testimonial 2">
+                    </div>
+                    <div class="testimonial-image">
+                        <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/6952bf336c45655838a682c2.png"
+                            alt="Client Testimonial 3">
+                    </div>
+                    <div class="testimonial-image">
+                        <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/6952bf336c4565432da682c3.png"
+                            alt="Client Testimonial 4">
+                    </div>
+                    <div class="testimonial-image">
+                        <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/6952bf33ce57745e87eaaf6b.png"
+                            alt="Client Testimonial 5">
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Section 9: Email Capture -->
-        <section class="engage-section"
-            style="display: flex; flex-direction: column; min-height: 80vh; justify-content: center; padding: 60px 0;">
-            <div class="newsletter-section" style="width: 100%;">
-                <div class="container">
-                    <div class="newsletter-card">
-                        <div class="newsletter-content">
-                            <h2>Get Credit Insights</h2>
-                            <p>Join the email list to receive credit education, dispute strategies, and financial
-                                insights.
-                            </p>
-                        </div>
-                        <form class="newsletter-form">
-                            <input type="text" placeholder="Name" required>
-                            <input type="email" placeholder="Email" required>
-                            <button type="submit" class="btn btn-dark">Join the List</button>
-                        </form>
-                    </div>
+        <!-- Section 8: Connect -->
+        <section class="social-section"
+            style="display: flex; flex-direction: column; min-height: 40vh; justify-content: center; padding: 120px 0; background: #f8f9fa; border-top: 1px solid var(--border);">
+            <div class="container">
+                <div class="section-header center">
+                    <h2 class="section-title" style="color: #0a0a0a;">Stay Connected</h2>
                 </div>
-            </div><!-- Section 8: Connect -->
-            <div class="social-section" style="width: 100%; margin-top: -40px;">
-                <div class="container">
-                    <div class="section-header center">
-                        <h2 class="section-title">Stay Connected</h2>
-                    </div>
-                    <div class="social-links">
-                        <a href="#" class="social-link">Instagram</a>
-                        <a href="#" class="social-link">YouTube</a>
-                        <a href="#" class="social-link">TikTok</a>
-                        <a href="#" class="social-link">Threads</a>
-                    </div>
+                <div class="social-links" style="display: flex; justify-content: center; gap: 4rem; margin-top: 2rem;">
+                    <a href="https://Instagram.com/shedamills" target="_blank" class="social-link"
+                        style="color: #0a0a0a; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: 0.3s; padding: 0.5rem 1rem; border-bottom: 1px solid var(--gold);">Instagram</a>
+                    <a href="#" class="social-link"
+                        style="color: #0a0a0a; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: 0.3s; padding: 0.5rem 1rem; border-bottom: 1px solid var(--gold);">YouTube</a>
+                    <a href="https://www.tiktok.com/@shedamillls?is_from_webapp=1&sender_device=pc" target="_blank"
+                        class="social-link"
+                        style="color: #0a0a0a; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: 0.3s; padding: 0.5rem 1rem; border-bottom: 1px solid var(--gold);">TikTok</a>
+                    <a href="https://www.facebook.com/share/1UYwyPMt3g/?mibextid=wwXIfr" target="_blank"
+                        class="social-link"
+                        style="color: #0a0a0a; text-decoration: none; font-weight: 700; font-size: 1.2rem; transition: 0.3s; padding: 0.5rem 1rem; border-bottom: 1px solid var(--gold);">Facebook</a>
                 </div>
             </div>
         </section>
@@ -1879,54 +2036,105 @@
         </style>
         <footer class="footer">
             <div class="container">
-                <div class="footer-grid">
+                <div class="footer-grid"
+                    style="grid-template-columns: 1fr auto; gap: 2rem; align-items: flex-start; margin-bottom: 40px;">
                     <div class="footer-brand">
                         <div class="footer-logo">Rasheda Mills</div>
-                        <p>Credit Architect | Fintech Founder | Speaker</p>
-                        <p
-                            style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; opacity: 0.5; margin-top: 25px; margin-bottom: 10px;">
-                            Powered By</p>
-                        <div style="display: flex; gap: 20px; align-items: center;">
-                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c6833834bd32f961deed8e.png"
-                                alt="Credit Remedi"
-                                style="height: 35px; object-fit: contain; opacity: 0.9; transition: all 0.3s; cursor: pointer;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
-                            <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c68338a235ae5985a8408c.png"
-                                alt="Waitlist Ally"
-                                style="height: 35px; object-fit: contain; opacity: 0.9; transition: all 0.3s; cursor: pointer;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.9'">
+                        <p style="opacity: 0.8; font-size: 0.95rem;">Financial Strategy Specialist | Business Consultant | Speaker</p>
+                        <div style="margin-top: 1.5rem;">
+                            <p
+                                style="font-size: 0.7rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; opacity: 0.4; margin-bottom: 8px;">
+                                Powered By</p>
+                            <div style="display: flex; gap: 15px; align-items: center;">
+                                    <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69d5012356789.png"
+                                        alt="Rasheda Mills Education" style="height: 28px; object-fit: contain; opacity: 0.7;">
+                                <img src="https://assets.cdn.filesafe.space/7rjBToyV0KOYs53VHTvR/media/69c68338a235ae5985a8408c.png"
+                                    alt="Waitlist Ally" style="height: 28px; object-fit: contain; opacity: 0.7;">
+                            </div>
                         </div>
                     </div>
-                    <div class="footer-nav">
-                        <a href="#">Credit Remedi</a>
-                        <a href="#">Meet Ally</a>
-                        <a href="#">Mentorship</a>
-                        <a href="#">Community</a>
+                    <div class="footer-nav" style="display: flex; gap: 2rem;">
+                        <a href="#" target="_blank"
+                            style="font-size: 0.9rem; text-decoration: none; opacity: 0.8;">Financial Education</a>
+                        <a href="#" target="_blank"
+                            style="font-size: 0.9rem; text-decoration: none; opacity: 0.8;">Meet Ally</a>
+                        <a href="./challenge.html"
+                            style="font-size: 0.9rem; text-decoration: none; opacity: 0.8;">Consulting</a>
+                        <a href="#" style="font-size: 0.9rem; text-decoration: none; opacity: 0.8;">Community</a>
                     </div>
-                    <div class="footer-bottom"
-                        style="display: flex; flex-direction: column; align-items: center; gap: 1rem; justify-content: center;">
-                        <div class="social-links"
-                            style="display: flex; gap: 1.5rem; justify-content: center; margin-bottom: 5px;">
-                            <a href="https://Instagram.com/shedamills" target="_blank"
-                                style="color: inherit; text-decoration: none; opacity: 0.6; transition: opacity 0.3s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Instagram</a>
-                            <a href="https://www.facebook.com/share/1UYwyPMt3g/?mibextid=wwXIfr" target="_blank"
-                                style="color: inherit; text-decoration: none; opacity: 0.6; transition: opacity 0.3s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Facebook</a>
-                            <a href="https://www.facebook.com/share/1JPW3qCrEF/?mibextid=wwXIfr" target="_blank"
-                                style="color: inherit; text-decoration: none; opacity: 0.6; transition: opacity 0.3s;"
-                                onmouseover="this.style.opacity='1'" onmouseout="this.style.opacity='0.6'">Community</a>
-                        </div>
-                        <div style="display: flex; gap: 1rem; align-items: center; justify-content: center;">
-                            <p style="margin: 0;">&copy; 2026 Rasheda Mills. All rights reserved.</p>
-                            <a href="#" class="privacy-link" style="margin: 0;">Privacy Policy</a>
-                        </div>
+                </div>
+
+                <div class="footer-bottom"
+                    style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 30px; display: flex; justify-content: space-between; align-items: center; gap: 1rem;">
+                    <div style="display: flex; gap: 1.5rem;">
+                        <a href="https://Instagram.com/shedamills" target="_blank"
+                            style="color: inherit; text-decoration: none; opacity: 0.5; font-size: 0.85rem;">Instagram</a>
+                        <a href="https://www.facebook.com/share/1UYwyPMt3g/?mibextid=wwXIfr" target="_blank"
+                            style="color: inherit; text-decoration: none; opacity: 0.5; font-size: 0.85rem;">Facebook</a>
+                        <a href="https://www.facebook.com/share/1JPW3qCrEF/?mibextid=wwXIfr" target="_blank"
+                            style="color: inherit; text-decoration: none; opacity: 0.5; font-size: 0.85rem;">Community</a>
+                    </div>
+                    <div style="display: flex; gap: 1.5rem; align-items: center; opacity: 0.5; font-size: 0.85rem;">
+                        <span>&copy; 2026 Rasheda Mills. All rights reserved.</span>
+                        <a href="#" style="color: inherit; text-decoration: none;">Privacy Policy</a>
                     </div>
                 </div>
             </div>
         </footer>
     </div>
     <script type="module" src="./main.js"></script>
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="video-modal-content">
+            <span class="close-modal">&times;</span>
+            <video id="modalVideo" controls>
+                <source src="" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoModal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const placeholders = document.querySelectorAll('.video-placeholder');
+            const closeModal = document.querySelector('.close-modal');
+
+            placeholders.forEach(placeholder => {
+                placeholder.addEventListener('click', () => {
+                    const videoSrc = placeholder.getAttribute('data-video');
+                    if (videoSrc) {
+                        modalVideo.src = videoSrc;
+                        videoModal.classList.add('active');
+                        modalVideo.play();
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+
+            const closePlayback = () => {
+                if (videoModal) {
+                    videoModal.classList.remove('active');
+                    modalVideo.pause();
+                    modalVideo.src = "";
+                    document.body.style.overflow = '';
+                }
+            };
+
+            if (closeModal) { closeModal.addEventListener('click', closePlayback); }
+            if (videoModal) {
+                videoModal.addEventListener('click', (e) => {
+                    if (e.target === videoModal) closePlayback();
+                });
+            }
+        });
+    </script>
+
+
 </body>
+
+
+
 
 </html>
